@@ -153,26 +153,26 @@
     }
 
     .landing img {
-        width: 330px;
+        width: 300px;
     }
 
     .name-role h1 {
-        font-size: 43px;
+        font-size: 38px;
         font-weight: 700;
         margin: 0;
     }
 
     .landing h3 {
-        font-size: 23px;
+        font-size: 19px;
         font-weight: 550;       
     }
 
     .name-role {      
-        padding-left: 30px;
+       width: 250px;
     }
 
     .name-role span {
-        font-size: 25px;
+        font-size: 19px;
         font-weight: 550;
         margin: 10px 0;
         
