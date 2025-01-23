@@ -178,6 +178,12 @@
         
     }
 
+    .landing-icons{   
+        padding: 20px;
+        position: relative;
+        top: -200px;
+    }
+
     .landing-icons i {
         font-size: 18px;
     }
