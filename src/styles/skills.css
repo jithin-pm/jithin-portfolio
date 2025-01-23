@@ -1,0 +1,525 @@
+.skills-main {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* main skill heading  */
+
+.skills-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-heading p {
+  color: rgb(162, 162, 162);
+}
+
+.skills-heading h2 {
+  margin-top: -17px;
+  font-weight: 600;
+  font-family: "Geologica", "sans-serif";
+  font-size: 38px;
+}
+
+
+/* techspecializatin heading */
+
+.tech-specialization-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 80%;
+  margin-top: 40px;
+}
+
+.tech-specialization-heading h2 {
+  margin-top: -17px;
+  font-size: 28px;
+  font-family: "Geologica", "sans-serif";
+  font-weight: 700;
+}
+
+.tech-specialization-heading p {
+  margin-top: -17px;
+  font-size: 14px;
+  color: rgb(162, 162, 162);
+}
+
+
+
+
+
+/* tech specialization contents */
+
+.tech-specialization {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  margin-top: 50px;
+  font-family: "Geologica", "sans-serif";
+}
+
+.box {
+  position: relative;
+}
+
+.box-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.darkmode .box-block {
+  color: #fff;
+}
+
+.lightmode .box-block {
+  color: black;
+}
+
+.box .text {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.box .text h2 {
+  font-size: 24px;
+  /* Adjusted for smaller circle */
+  font-weight: 500;
+}
+
+.circle-skill {
+  width: 150px;
+  /* Decreased size */
+  height: 150px;
+  /* Decreased size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-skill .points {
+  width: 3px;
+  /* Adjusted for smaller circles */
+  height: 12px;
+  /* Adjusted for smaller circles */
+  background: #d9d7da;
+  position: absolute;
+  border-radius: 3px;
+  transform: rotate(calc(var(--i) * var(--rot))) translateY(-75px);
+  /* Adjusted radius */
+}
+
+.points.marked {
+  animation-delay: calc(var(--i) * 0.05s);
+  animation: glow 0.04s linear forwards;
+}
+
+
+
+/* development tools section */
+
+.development-tools-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 80%;
+  margin-top: 80px;
+}
+
+.development-tools-heading h2 {
+  margin-top: -17px;
+  font-size: 28px;
+  font-family: "Geologica", "sans-serif";
+  font-weight: 700;
+}
+
+.development-tools-heading p {
+  margin-top: -17px;
+  font-size: 14px;
+  color: rgb(162, 162, 162);
+}
+
+
+.development-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  width: 80%;
+  margin-top: 70px;
+}
+
+.circle-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.circle-block p {
+  font-family: "Geologica", "sans-serif";
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
+/* Outer wrapper */
+.circle-wrap {
+  width: 100px;
+  /* Increased width */
+  height: 100px;
+  /* Increased height */
+  border-radius: 50%;
+  position: relative;
+  background: #d9d7da;
+}
+
+/* Circle and masks */
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill-1,
+.circle-wrap .circle .fill-2,
+.circle-wrap .circle .fill-3,
+.circle-wrap .circle .fill-4,
+.circle-wrap .circle .fill-5,
+.circle-wrap .circle .fill-6,
+.circle-wrap .circle .fill-7,
+.circle-wrap .circle .fill-8,
+.circle-wrap .circle .fill-9,
+.circle-wrap .circle .fill-10,
+.circle-wrap .circle .fill-11,
+.circle-wrap .circle .fill-12 {
+  width: 100px;
+  /* Match size of outer wrapper */
+  height: 100px;
+  /* Match size of outer wrapper */
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle-wrap .circle .mask {
+  clip: rect(0px, 100px, 100px, 50px);
+  /* Adjusted clipping for larger size */
+}
+
+.circle-wrap .inside-circle {
+  width: 80px;
+  /* Inner circle size */
+  height: 80px;
+  /* Inner circle size */
+  border-radius: 50%;
+  line-height: 80px;
+  /* Center the text vertically */
+  text-align: center;
+  margin: 10px;
+  /* Center the inner circle */
+  font-family: "Geologica", "sans-serif";
+  position: absolute;
+  font-weight: 700;
+  font-size: 1.2em;
+  /* Adjust font size */
+}
+
+.darkmode .circle-wrap .inside-circle {
+  background-color: black;
+  color: white;
+}
+
+.lightmode .circle-wrap .inside-circle {
+  background-color: #fff;
+  color: black;
+}
+
+/* Color and animations */
+.mask .fill-1 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask .fill-2 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask .fill-3 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask .fill-4 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask .fill-5 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask .fill-6 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask .fill-7 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask .fill-8 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask .fill-9 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask .fill-10 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask .fill-11 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask .fill-12 {
+  clip: rect(0px, 50px, 100px, 0px);
+  /* Adjusted clipping */
+
+}
+
+.mask.full-1,
+.circle .fill-1 {
+  animation: fill-1 ease-in-out 3s;
+  transform: rotate(156deg);
+  /* Adjust for 85% */
+}
+
+.mask.full-2,
+.circle .fill-2 {
+  animation: fill-2 ease-in-out 3s;
+  transform: rotate(171deg);
+  /* Adjust for 65% */
+}
+
+.mask.full-3,
+.circle .fill-3 {
+  animation: fill-3 ease-in-out 3s;
+  transform: rotate(162deg);
+  /* Adjust for 75% */
+}
+
+.mask.full-4,
+.circle .fill-4 {
+  animation: fill-3 ease-in-out 3s;
+  transform: rotate(169deg);
+  /* Adjust for 75% */
+}
+
+.mask.full-5,
+.circle .fill-5 {
+  animation: fill-3 ease-in-out 3s;
+  transform: rotate(162deg);
+  /* Adjust for 75% */
+}
+
+.mask.full-6,
+.circle .fill-6 {
+  animation: fill-3 ease-in-out 3s;
+  transform: rotate(135deg);
+  /* Adjust for 75% */
+}
+
+.mask.full-7,
+.circle .fill-7 {
+  animation: fill-3 ease-in-out 3s;
+  transform: rotate(144deg);
+  /* Adjust for 75% */
+}
+
+.mask.full-8,
+.circle .fill-8 {
+  animation: fill-3 ease-in-out 3s;
+  transform: rotate(135deg);
+  /* Adjust for 75% */
+}
+
+.mask.full-9,
+.circle .fill-9 {
+  animation: fill-3 ease-in-out 3s;
+  transform: rotate(158.4deg);
+  /* Adjust for 75% */
+}
+
+.mask.full-10,
+.circle .fill-10 {
+  animation: fill-3 ease-in-out 3s;
+  transform: rotate(126deg);
+  /* Adjust for 75% */
+}
+
+.mask.full-11,
+.circle .fill-11 {
+  animation: fill-3 ease-in-out 3s;
+  transform: rotate(147.6deg);
+  /* Adjust for 75% */
+}
+
+.mask.full-12,
+.circle .fill-12 {
+  animation: fill-3 ease-in-out 3s;
+  transform: rotate(117deg);
+  /* Adjust for 75% */
+}
+
+
+@keyframes glow {
+  0% {
+    background: #0007;
+    box-shadow: none;
+  }
+
+  100% {
+    background: var(--bgColor);
+
+  }
+}
+
+
+@media (max-width: 767px) {
+
+  .skills-main {
+  padding-top: 50px;
+  }
+
+  .skills-heading p {
+    font-size: 14px;
+  }
+
+  .skills-heading h2 {
+    font-size: 28px;
+  }
+
+  .tech-specialization-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 80%;
+    margin-top: 70px;
+
+  }
+
+  .tech-specialization-heading h2 {
+    margin-top: -17px;
+    font-size: 23px;
+  }
+
+  .tech-specialization-heading p {
+    margin-top: -17px;
+    font-size: 14px;
+    color: rgb(162, 162, 162);
+  }
+
+  .tech-specialization {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 80px;
+    font-family: "Geologica", "sans-serif";
+  }
+
+  .circle-skill .points {
+    width: 2px;
+    /* Adjusted for smaller circles */
+    height: 10px;
+    /* Adjusted for smaller circles */
+    background: #d9d7da;
+    position: absolute;
+    border-radius: 3px;
+    transform: rotate(calc(var(--i) * var(--rot))) translateY(-60px);
+    /* Adjusted radius */
+  }
+
+  .box .text h2 {
+    font-size: 20px;
+    /* Adjusted for smaller circle */
+    font-weight: 500;
+
+  }
+
+  .box-block {
+    gap: 5px;
+  }
+
+
+  .development-tools {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns */
+    gap: 20px;
+    /* Space between items */
+    justify-content: center;
+    width: 80%;
+    padding: 0 10px;
+  }
+
+  .development-tools-heading {
+    width: 80%;
+    margin-top: 100px;
+  }
+
+  .development-tools-heading h2 {
+    margin-top: -17px;
+    font-size: 23px;
+  }
+
+  .development-tools-heading p {
+    margin-top: -17px;
+    font-size: 14px;
+    color: rgb(162, 162, 162);
+  }
+
+  .circle-block p {
+    font-family: "Geologica", "sans-serif";
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+
+
+}

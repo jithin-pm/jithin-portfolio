@@ -1,0 +1,184 @@
+/* about-me text section */
+
+.text-container {
+    text-align: center;
+}
+.text-container h1 {
+    font-size: 45px;
+    font-family: "Geologica", "sans-serif";
+    font-weight: 700;
+    font-style: normal;
+    margin-top: -10px;
+}
+
+.text-container h5 {
+    font-weight: 550;
+    font-size: 23px;
+}
+
+
+/* about-me contents */
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;   
+    margin: 0 auto;
+    padding-top: 100px;
+    width: 80%;
+}
+
+
+/* about-me image styling */
+
+.about-me-img img {
+    border-radius: 20px;
+    width: 425px;
+}
+
+
+/* about-me description section */
+
+.about-me-description {
+    font-family: "Geologica", "sans-serif";
+    width: 80%;
+}
+
+.about-me-description h2 {
+    font-weight: 700;
+    font-size: 33px;
+}
+
+.about-me-description h4 {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.about-me-description p {
+    color: rgb(162, 162, 162);
+    font-size: 14px;
+    font-weight: 450;
+}
+
+.about-me-description hr {
+    margin-top: 20px;
+}
+
+
+.about-me-description-details p {
+    color: rgb(162, 162, 162);
+    font-weight: 500;
+}
+
+.about-me-description-details span {
+    color: rgb(162, 162, 162);
+    font-weight: 400;
+}
+
+.btn-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.btn-icons button {
+    border: none;
+    font-weight: 600;
+    padding: 1vw 2.3vw;
+    font-size: max(1vw, 13px);
+    border-radius: 40px;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+.btn-icons button:hover {
+    background-color: #271849;
+    color: white;
+}
+
+.btn-icons hr {
+    width: 50px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.darkmode .icons a {
+    color: white;
+}
+
+.lightmode .icons a {
+    color: black;
+}
+
+.icons a :hover {
+    color: rgb(162, 162, 162);
+}
+
+
+  @media (max-width: 768px) {
+   
+    .about {
+        margin-top: -100px;
+    }
+
+    .text-container h1 {
+        font-size: 37px;
+        font-family: "Geologica", "sans-serif";
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .text-container h5 {
+        font-weight: 550;
+        font-size: 19px;
+        
+    }
+
+
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+        padding-top: 50px;
+    }
+
+    .about-me-img img {
+        width: 240px;
+    }
+
+    .about-me-description h2 {
+        font-size: 22px;
+    }
+
+    .about-me-description {
+        width: 90%;
+        /* Match description width to screen size */
+        text-align: left;
+    }
+
+    .about-me-description h4 {
+        font-size: 20px;
+    }
+
+    .btn-icons button {
+        border: none;
+        font-weight: 500;
+        padding: 3vw 5vw;
+        font-size: max(1vw, 12px);
+        border-radius: 40px;
+        font-family: "Poppins", sans-serif;
+    }
+    .icons {
+        gap: 20px;
+    }
+
+    .icons i {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,156 @@
+.education {
+    padding-top: 200px;
+}
+
+/* title section */
+.education-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.education-title h2 {
+    margin-top: -17px;
+    font-weight: 600;
+    font-family: "Geologica", "sans-serif";
+    font-size: 38px;
+}
+
+.education-title p {
+    color: rgb(162, 162, 162);
+}
+
+
+/* block section */
+
+.education-block-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+
+.education-block-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;;
+}
+
+.education-block {
+    width: 590px;
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.education-block-contents {
+    padding-left: 20px
+}
+
+.darkmode .education-block {
+    background-color: #161616;
+}
+
+.lightmode .education-block {
+    background-color: rgb(233 233 233)
+}
+
+.education-block h6 {
+    color: rgb(162, 162, 162);
+    font-weight: 550;
+    font-size: 17px;
+}
+
+.lightmode .education-block h4 {
+    color: black;
+    font-weight: 550;
+}
+
+.darkmode .education-block h4 {
+    color: #ffff;
+    font-weight: 550;
+}
+
+
+.year {
+    display: inline-flex;
+    /* Inline element with flex behavior */
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    /* Add horizontal padding for spacing */
+    height: 25px;
+    /* Keep a fixed height */
+    border-radius: 4px;
+    /* Rounded corners */
+    color: white;
+    /* Text color */
+    font-weight: 700;
+    /* Bold text */
+    white-space: nowrap;
+    /* Prevent text wrapping */
+}
+
+.year p {
+    margin: 0;
+    /* Remove extra space around the text */
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* hover section */
+.education-block-hover {
+    height: 2px;
+    width: 590px;
+}
+
+.education-block-main:hover .education-block-hover {
+    background-color: var(--hover-color);
+    transition: background-color 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+
+    .education {
+        padding-top: 50px;
+        padding-bottom: 0%;
+    }
+
+    .education-title h2 {
+        margin-top: -17px;
+        font-weight: 600;
+        font-family: "Geologica", "sans-serif";
+        font-size: 28px;
+    }
+
+    .education-title p {
+        font-size: 14px;
+    }
+
+    .education-block {
+        width: 340px;
+        height: 200px;
+    }
+
+    .education-block-hover {
+        width: 340px;
+    }
+
+    .education-block h4 {
+        font-size: 19px;
+    }
+
+    .education-block h6 {
+        font-size: 15px;
+    }
+
+}

@@ -1,0 +1,192 @@
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    margin: 0%;
+    padding: 0%;
+    gap: 30px;   
+    
+}
+
+/* landing text */
+.name-role {
+    font-family: "Geologica", "sans-serif";
+    width: 400px;
+}
+
+.name-role h1 {
+    font-size: 70px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.name-role span {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 10px 0;
+    font-family: "Geologica";
+}
+
+.name-role span {
+    position: relative;
+}
+
+.name-role span::before {
+    content: "Web Developer";
+    animation: words 8s infinite;
+}
+
+.name-role span::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+.darkmode .name-role span::after {
+    background-color: black;
+    transition: background-color 1s ease, color 0.3s ease;
+}
+
+.lightmode .name-role span::after {
+    background-color: white;
+    transition: background-color 1s ease, color 0.3s ease;
+}
+
+/* typing effect on landing text */
+
+@keyframes cursor {
+    to {
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes words {
+    0%, 50% {
+        content: "Web Developer";
+    }
+    51%, 100% {
+        content: "Software Developer";
+    }
+}
+
+@keyframes typing {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 8px);
+    }
+}
+
+
+/* landing image */
+
+.landing-image img {
+    max-width: 470px;
+    width: 100%;
+    height: auto;
+    border-radius: 30%;
+}
+
+/* landing icon section */
+
+.landing-icons{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    position: relative;
+    top: -190px;
+}
+
+.icons-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-end;
+}
+.icons-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-end;
+
+}
+
+/* icons color according to current theme */
+
+.lightmode .landing-icons a {
+    color: black;
+}
+
+.darkmode .landing-icons a {
+    color: white;
+}
+
+.landing-icons a:hover {
+    color: rgb(159 159 159);
+}
+
+
+@media (max-width: 767px) {
+    .landing {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        margin-top: -50px;
+        margin-bottom: 50px;
+    }
+
+    .landing .landing-image {
+        order: 1;
+    }
+
+    .landing .name-role {
+        order: 2;
+    }
+
+    .landing img {
+        width: 330px;
+    }
+
+    .name-role h1 {
+        font-size: 43px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .landing h3 {
+        font-size: 23px;
+        font-weight: 550;       
+    }
+
+    .name-role {      
+        padding-left: 30px;
+    }
+
+    .name-role span {
+        font-size: 25px;
+        font-weight: 550;
+        margin: 10px 0;
+        
+    }
+
+    .landing-icons i {
+        font-size: 18px;
+    }
+
+    .icons-left {
+        gap: 10px;
+    }
+
+    .icons-right {
+        gap: 10px;
+    }
+}

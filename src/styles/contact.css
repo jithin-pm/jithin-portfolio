@@ -1,0 +1,251 @@
+.contacts {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 120px;
+  }
+  
+  .contacts-section {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    gap: 50px;
+    padding-top: 60px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    font-family: "Geologica", "sans-serif";
+    font-weight: 400;
+  }
+  
+  
+  .contacts-section h5 {
+    font-size: 24px;
+    font-family: "Geologica", "sans-serif";
+    font-weight: 600;
+  }
+  
+  
+  .contacts-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-info p {
+    font-size: 15px;
+    font-family: "Geologica", "sans-serif";
+    font-weight: 270;
+    color: rgb(159 159 159);
+  }
+  
+  .contact-info span {
+    font-weight: 600;
+  }
+  
+  .contacts-heading p {
+    color: rgb(162, 162, 162);
+  }
+  
+  .input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+  }
+  
+  .contacts-heading h2 {
+    margin-top: -17px;
+    font-weight: 600;
+    font-family: "Geologica", "sans-serif";
+    font-size: 38px;
+  }
+  
+  .input-section input {
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .lightmode .input-section input {
+    background-color: rgb(233 233 233);
+    color: black;
+  }
+  
+  .darkmode .input-section input {
+    background-color: rgb(22 22 22);
+    color: rgb(162, 162, 162);
+  }
+  
+  .lightmode .input-section textarea {
+    background-color: rgb(233 233 233);
+    color: black;
+  }
+  
+  .darkmode .input-section textarea {
+    background-color: rgb(22 22 22);
+    color: rgb(162, 162, 162);
+  }
+  
+  .name-email {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Input Section Styling */
+  .name-email input {
+    width: 270px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    /* Dark background */
+    border: 1px solid #333;
+    /* Slight border */
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  
+  
+  .sub input {
+    width: 560px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    /* Dark background */
+    border: 1px solid #333;
+    /* Slight border */
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .message textarea {
+    width: 560px;
+    height: 150px;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    
+    /* Dark background */
+    border: 1px solid #333;
+    /* Slight border */
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-section input::placeholder,
+  .input-section textarea::placeholder {
+    color: #666;
+    /* Placeholder color */
+  }
+  
+  /* Button Styling */
+  .input-section button {
+    width: 170px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+  
+    /* Green button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+  }
+  
+  .input-section button:hover{
+    color: white;
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding-top: 30px;
+  
+  }
+  
+  .lightmode .icon a {
+    color: black;
+  }
+  
+  .darkmode .icon a {
+    color: white;
+  }
+  
+  .icon a :hover {
+    color: rgb(159 159 159);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 767px) {
+  
+    .contacts {
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+  
+    .contacts-heading h2 {
+      font-size: 28px;
+    }
+  
+    .contacts-heading p {
+      font-size: 14px;
+    }
+  
+    .contacts-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;  
+      padding-top: 40px;
+      gap: 50px;
+    }
+  
+    .input-section input,
+    .input-section textarea {
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+  
+    .input-section button {
+      font-size: 0.9rem;
+      padding: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Input Section Styling */
+    .name-email input {
+      width: 150px;
+    }
+  
+    .sub input {
+      width: 320px;
+      padding: 12px;
+  
+    }
+  
+    .message textarea {
+      width: 320px;
+      height: 150px;
+      padding: 15px;
+    }
+  
+    .contact-info p {
+      font-size: 13px;
+    }
+  
+  
+  
+  }
