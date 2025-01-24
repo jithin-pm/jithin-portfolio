@@ -57,8 +57,8 @@ function Education() {
                                 <div className='year mb-2' style={{ backgroundColor: color }}>
                                     <p>2018 - 2020</p>
                                 </div>
-                                <h4>Govt Higher Secondary School Kalanjoor</h4>
-                                <h6>Veterinary Science</h6>
+                                <h4>Veterinary Science</h4>
+                                <h6>Govt Higher Secondary School Kalanjoor</h6>
 
                             </div>
                         </div>

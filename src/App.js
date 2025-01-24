@@ -50,7 +50,10 @@ function App() {
 
   return (
     <>
+
+
       {showSplash ? (
+
         <div className={`splash-screen ${theme ? 'lightmode' : 'darkmode'}`}>
           <h1>
             <span>j</span>
@@ -62,6 +65,7 @@ function App() {
             <span className="smile">:)</span>
           </h1>
         </div>
+
       ) : (
         <div className={theme ? 'lightmode' : 'darkmode'}>
           {/* Header Section */}
@@ -137,8 +141,9 @@ function App() {
           />
 
 
-        </div>
-      )}
+        </div >
+      )
+      }
     </>
   );
 }

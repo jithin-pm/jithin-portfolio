@@ -176,6 +176,12 @@
         font-size: 12px;
     }
 
+    .btn-icons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+    }
 
     .btn-icons button {
         border: none;

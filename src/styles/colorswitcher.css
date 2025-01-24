@@ -42,7 +42,8 @@
     justify-content: center;
     padding-bottom: 20px;
 }
-.colors i{
+
+.colors i {
     padding-top: 20px;
 }
 
@@ -50,7 +51,7 @@
 .fixed-icon {
     position: relative;
     /* Position of the icon inside the container */
-    padding: 12px;
+    padding: 17px;
     cursor: pointer;
 }
 
@@ -64,8 +65,28 @@
         bottom: 15px;
         right: 15px;
     }
+
     .color-picker {
         max-width: 100%;
         font-size: 0.9rem;
+        width: 180px;
+        height: 125px;
+        
+    }
+
+    .color-picker h6{
+        font-size: 12px;
+    }
+
+    .fixed-icon {
+        padding: 6px;
+    }
+
+    .fixed-icon i {
+        font-size: 22px;
+    }
+
+    .colors {
+        gap: 15px;
     }
 }

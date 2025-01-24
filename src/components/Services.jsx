@@ -27,7 +27,7 @@ function Services() {
                     <div className='block' style={{ "--hover-color": color }}  data-aos="fade-right" data-aos-duration="1400" data-aos-delay="100"    >
                         <div className='services-block' >
                             <div className='services-block-contents'  >
-                                <i className="fa-solid fa-mobile-screen-button fa-2xl" style={{ color }}></i>
+                                <i className="fa-solid fa-mobile-screen-button fa-xl" style={{ color }}></i>
                                 <h3 className='mt-4' >Mobile-Responsive Design</h3>
                                 <p>Creating fully responsive and adaptive layouts that provide a seamless user experience across all devices, from mobile to desktop.</p>
                             </div>
