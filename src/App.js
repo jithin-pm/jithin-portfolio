@@ -9,7 +9,7 @@ import Education from './components/Education';
 import Services from './components/Services';
 import Skill from './components/Skill';
 import Contact from './components/Contact';
-import { Bounce, ToastContainer } from 'react-toastify';
+import { Bounce, Flip, ToastContainer, Zoom } from 'react-toastify';
 import ColorSwitcher from './components/ColorSwitcher';
 
 function App() {
@@ -125,18 +125,17 @@ function App() {
           </div>
 
           <ToastContainer
-
             position="top-center"
-            autoClose={3000}
-            hideProgressBar={false}
+            autoClose={1111}
+            hideProgressBar
             newestOnTop={false}
             closeOnClick={false}
             rtl={false}
             pauseOnFocusLoss
             draggable
             pauseOnHover
-            theme="light"
-            transition={Bounce}
+            theme="dark"
+            transition={Zoom}
           />
 
 
