@@ -14,8 +14,8 @@ function Services() {
                 </div>
 
                 <div className='services-block-main'  >
-                    <div className='block' style={{ "--hover-color": color }}  >
-                        <div className='services-block' data-aos="fade-right" data-aos-duration="1400" >
+                    <div className='block' style={{ "--hover-color": color }} data-aos="fade-right" data-aos-duration="1400" >
+                        <div className='services-block'  >
                             <div className='services-block-contents' >
                                 <i className="fa-solid fa-code fa-2xl" style={{ color }}></i>
                                 <h3 className='mt-4' >Web Development</h3>

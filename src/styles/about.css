@@ -1,5 +1,4 @@
 /* about-me text section */
-
 .text-container {
     text-align: center;
 }
@@ -59,6 +58,10 @@
     font-size: 14px;
     font-weight: 450;
 }
+
+.responsive-span {
+    display: inline; /* Default for larger screens */
+  }
 
 .about-me-description hr {
     margin-top: 20px;
@@ -124,11 +127,11 @@
   @media (max-width: 768px) {
    
     .about {
-        margin-top: -100px;
+        margin-top: -160px;
     }
 
     .text-container h1 {
-        font-size: 37px;
+        font-size: 30px;
         font-family: "Geologica", "sans-serif";
         font-weight: 700;
         font-style: normal;
@@ -136,28 +139,31 @@
 
     .text-container h5 {
         font-weight: 550;
-        font-size: 19px;
-        
+        font-size: 17px;   
     }
-
 
     .about-me {
         flex-direction: column;
         text-align: center;
-        gap: 50px;
+        gap: 20px;
         padding-top: 50px;
     }
 
     .about-me-img img {
-        width: 240px;
+        width: 220px;
     }
 
     .about-me-description h2 {
         font-size: 22px;
     }
 
+    .responsive-span {
+        display: block; /* Force the span to the next line */
+         /* Optional spacing */
+      }
+
     .about-me-description {
-        width: 90%;
+        width: 95%;
         /* Match description width to screen size */
         text-align: left;
     }
@@ -165,6 +171,11 @@
     .about-me-description h4 {
         font-size: 20px;
     }
+
+    .about-me-description p {
+        font-size: 12px;
+    }
+
 
     .btn-icons button {
         border: none;
@@ -175,7 +186,7 @@
         font-family: "Poppins", sans-serif;
     }
     .icons {
-        gap: 20px;
+        gap: 15px;
     }
 
     .icons i {

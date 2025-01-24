@@ -18,14 +18,14 @@ function About() {
                     </div>
 
                     <div className='about-me-description'data-aos="fade-up" data-aos-duration="1200"  >
-                        <div  >
+                        
                             <h4 style={{ color }} >Who am i ?</h4>
-                            <h2>I'm Jithin , a <span style={{ color }} className='ms-1' >Mern Stack Developer</span></h2>
+                            <h2 className='mt-3' >I'm Jithin , <span className="responsive-span" style={{ color }} >a Mern Stack Developer</span></h2>
                             <p>I’m a passionate software and web developer specializing in the MERN stack. As a fresher, I’ve gained hands-on
                                 experience by completing several impactful projects that showcase my ability to build robust, user-friendly applications.
                                 I thrive on turning ideas into functional products with a focus on clean design, modern standards, and seamless performance.
                                 I’m eager to contribute to dynamic teams and bring value to innovative projects.</p>
-                        </div>
+                        
                          <hr />
                         <div className='about-me-description-details' data-aos="fade-right" data-aos-duration="1600"  >
                             <p>Name :<span> Jithin pm</span></p>
