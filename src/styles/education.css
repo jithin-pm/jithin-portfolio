@@ -1,5 +1,6 @@
 .education {
     padding-top: 50px;
+    padding-bottom: 70px;
 }
 
 /* title section */
@@ -125,7 +126,7 @@
 @media (max-width: 768px) {
 
     .education {
-        padding-top: 60px;
+        padding-top: 10px;
         padding-bottom: 0%;
     }
 
