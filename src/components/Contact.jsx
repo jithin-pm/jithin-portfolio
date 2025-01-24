@@ -61,7 +61,6 @@ function Contact() {
         e.preventDefault();
 
         if (!validateForm()) {
-            toast.error("Please fill out all required fields correctly.");
             return;
         }
 
@@ -70,7 +69,6 @@ function Contact() {
             .then(
                 (result) => {
                     console.log("SUCCESS!", result.text);
-                    toast.success("Message sent successfully!");
                     setErrors({});
                     e.target.reset();
                 },
