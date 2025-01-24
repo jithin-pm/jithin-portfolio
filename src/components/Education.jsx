@@ -32,8 +32,8 @@ function Education() {
                                 <div className='year mb-2' style={{ backgroundColor: color }}>
                                     <p>Aug 2023 - Apr 2024</p>
                                 </div>
-                                <h4>Luminar Technolab Kochi</h4>
-                                <h6>ME(A)RN Stack Development</h6>
+                                <h4>ME(A)RN Stack Development</h4>
+                                <h6>Luminar Technolab Kochi</h6>
                             </div>
                         </div>
                         <div className='education-block-hover' ></div>

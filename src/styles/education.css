@@ -62,14 +62,15 @@
 
 .education-block h6 {
     color: rgb(162, 162, 162);
-    font-weight: 550;
-    font-size: 17px;
+    font-weight: 500;
+    font-size: 15px;
     font-family: "Geologica", "sans-serif";
 }
 
 .education-block h4 {
     font-family: "Geologica", "sans-serif";
     font-weight: 600;
+    font-size: 22px;
 }
 
 .lightmode .education-block h4 {
@@ -156,11 +157,11 @@
     }
 
     .education-block h4 {
-        font-size: 18px;
+        font-size: 19px;
     }
 
     .education-block h6 {
-        font-size: 14px;
+        font-size: 13px;
     }
 
 }
