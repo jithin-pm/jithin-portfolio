@@ -421,7 +421,8 @@
 @media (max-width: 767px) {
 
   .skills-main {
-  padding-top: 50px;
+  padding-top: 10px;
+  padding-bottom: 40px;
   }
 
   .skills-heading p {
@@ -458,9 +459,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    margin-top: 80px;
+    gap: 30px;
+    margin-top: 40px;
     font-family: "Geologica", "sans-serif";
+  }
+
+  .circle-skill {
+    width: 130px;
+    height: 130px;
   }
 
   .circle-skill .points {
@@ -486,21 +492,9 @@
     gap: 5px;
   }
 
-
-  .development-tools {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* Two columns */
-    gap: 20px;
-    /* Space between items */
-    justify-content: center;
-    width: 80%;
-    padding: 0 10px;
-  }
-
   .development-tools-heading {
     width: 80%;
-    margin-top: 100px;
+    margin-top: 70px;
   }
 
   .development-tools-heading h2 {
@@ -513,6 +507,19 @@
     font-size: 14px;
     color: rgb(162, 162, 162);
   }
+
+  .development-tools {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns */
+    gap: 20px;
+    /* Space between items */
+    justify-content: center;
+    width: 80%;
+    padding: 0 10px;
+  }
+
+ 
 
   .circle-block p {
     font-family: "Geologica", "sans-serif";

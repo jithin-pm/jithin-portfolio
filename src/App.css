@@ -227,6 +227,11 @@ h1 span:nth-child(7) {
         transform: none !important;
         opacity: 1 !important;
     }
+
+    .splash-screen h1 {
+margin-bottom: 100px;
+    }
+    
 }
 
 

@@ -53,7 +53,6 @@ function App() {
 
 
       {showSplash ? (
-
         <div className={`splash-screen ${theme ? 'lightmode' : 'darkmode'}`}>
           <h1>
             <span>j</span>
