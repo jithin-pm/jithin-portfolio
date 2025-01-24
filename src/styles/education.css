@@ -64,16 +64,20 @@
     color: rgb(162, 162, 162);
     font-weight: 550;
     font-size: 17px;
+    font-family: "Geologica", "sans-serif";
+}
+
+.education-block h4 {
+    font-family: "Geologica", "sans-serif";
+    font-weight: 600;
 }
 
 .lightmode .education-block h4 {
-    color: black;
-    font-weight: 550;
+    color: black;  
 }
 
 .darkmode .education-block h4 {
-    color: #ffff;
-    font-weight: 550;
+    color: #ffff;  
 }
 
 
