@@ -10,11 +10,12 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+
 }
 
 h1 span {
   font-family: "Shadows Into Light", serif;
-  font-weight: 430;
+  font-weight: 450;
   font-style: normal;
   letter-spacing: 1.3px;
   font-size: 65px;
@@ -119,7 +120,7 @@ h1 span:nth-child(7) {
 }
 
 .header-text span {
-  margin-left: 6px;
+  margin-left: 5px;
 }
 
 .header-links {
@@ -217,7 +218,7 @@ h1 span:nth-child(7) {
   }
 
   .splash-screen span{
-    font-weight: 400;
+    font-weight: 470;
     font-size: 45px;  
   }
 
