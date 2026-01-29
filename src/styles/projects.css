@@ -1,0 +1,208 @@
+.projects {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 90px;
+}
+
+/* heading section */
+.projects-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects-heading p {
+    color: rgb(162, 162, 162);
+}
+
+.projects-heading h2 {
+    margin-top: -17px;
+    font-weight: 600;
+    font-family: "Geologica", "sans-serif";
+    font-size: 38px;
+}
+
+.projects-block-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-top: 50px;
+    max-width: 1250px;
+    justify-items: center;
+}
+
+.project-card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card {
+    width: 380px;
+    height: 480px;
+    padding: 0;
+    /* Remove default padding to let image bleed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Ensure image respects border radius */
+    position: relative;
+    /* For absolute positioning if needed */
+}
+
+.project-img-container {
+    width: 100%;
+    height: 200px;
+    /* Fixed height for image area */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Subtle background for placeholders */
+    overflow: hidden;
+}
+
+.project-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img-container img {
+    transform: scale(1.1);
+}
+
+.project-placeholder-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.project-card-contents {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 25px;
+    /* Add padding back for content */
+    flex-grow: 1;
+}
+
+.project-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.project-title-row h3 {
+    font-family: "Geologica", "sans-serif";
+    margin: 0;
+    font-size: 22px;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+}
+
+.project-links a {
+    color: rgb(162, 162, 162);
+    transition: 0.3s;
+}
+
+.project-links a:hover {
+    color: var(--hover-color);
+}
+
+
+.project-desc {
+    font-size: 14px;
+    color: rgb(162, 162, 162);
+    font-family: "Geologica", "sans-serif";
+    margin-top: 5px;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.project-tech {
+    font-size: 13px;
+    color: rgb(162, 162, 162);
+    font-family: "Geologica", "sans-serif";
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.lightmode .project-card {
+    background-color: rgb(233 233 233);
+}
+
+.darkmode .project-card {
+    background-color: #161616;
+}
+
+.darkmode .project-card h3 {
+    color: #ffff;
+}
+
+.lightmode .project-card h3 {
+    color: black;
+}
+
+.project-hover-div {
+    width: 380px;
+    height: 2px;
+}
+
+.project-card-container:hover .project-hover-div {
+    background-color: var(--hover-color);
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+    .projects-block-main {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding-top: 80px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .projects-heading h2 {
+        font-size: 28px;
+    }
+
+    .projects-heading p {
+        font-size: 14px;
+    }
+
+    .projects-block-main {
+        margin-top: 30px;
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        width: 100%;
+        height: auto;
+        min-height: 400px;
+    }
+
+    .project-hover-div {
+        width: 100%;
+    }
+}

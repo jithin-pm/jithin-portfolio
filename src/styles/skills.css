@@ -421,8 +421,8 @@
 @media (max-width: 767px) {
 
   .skills-main {
-  padding-top: 50px;
-  padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 40px;
   }
 
   .skills-heading p {
@@ -519,7 +519,7 @@
     padding: 0 10px;
   }
 
- 
+
 
   .circle-block p {
     font-family: "Geologica", "sans-serif";

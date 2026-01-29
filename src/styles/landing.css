@@ -5,7 +5,7 @@
     height: 90vh;
     margin: 0%;
     padding: 0%;
-    gap: 30px;  
+    gap: 30px;
 }
 
 /* landing text */
@@ -64,19 +64,42 @@
 }
 
 @keyframes words {
-    0%, 50% {
+
+    0%,
+    50% {
         content: "Web Developer";
     }
-    51%, 100% {
+
+    51%,
+    100% {
         content: "Software Developer";
     }
 }
 
 @keyframes typing {
-    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
         width: 0;
     }
-    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
         width: calc(100% + 8px);
     }
 }
@@ -93,22 +116,22 @@
 
 /* landing icon section */
 
-.landing-icons{
+.landing-icons {
     display: flex;
     justify-content: space-between;
     padding: 30px;
-    position: relative;
-    top: -190px;
+    margin-top: -190px;
 }
 
-.icons-left{
+.icons-left {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     justify-content: flex-end;
 }
-.icons-right{
+
+.icons-right {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,6 +154,24 @@
     color: rgb(159 159 159);
 }
 
+
+@media (max-width: 1024px) {
+    .landing-image img {
+        width: 350px;
+    }
+
+    .name-role h1 {
+        font-size: 55px;
+    }
+
+    .name-role span {
+        font-size: 24px;
+    }
+
+    .landing-icons {
+        margin-top: -150px;
+    }
+}
 
 @media (max-width: 767px) {
     .landing {
@@ -163,24 +204,23 @@
 
     .landing h3 {
         font-size: 19px;
-        font-weight: 550;       
+        font-weight: 550;
     }
 
-    .name-role {      
-       width: 250px;
+    .name-role {
+        width: 250px;
     }
 
     .name-role span {
         font-size: 19px;
         font-weight: 550;
         margin: 10px 0;
-        
+
     }
 
-    .landing-icons{   
+    .landing-icons {
         padding: 20px;
-        position: relative;
-        top: -200px;
+        margin-top: -200px;
     }
 
     .landing-icons i {

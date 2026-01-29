@@ -270,7 +270,7 @@ function Skill() {
                     </div>
                 </div>
 
-                <p className='mt-2'>Next JS</p>
+                <p className='mt-2'>WordPress</p>
             </div>
 
         </div>

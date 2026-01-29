@@ -25,7 +25,7 @@ function Education() {
                         </div>
                         <div className='education-block-hover' ></div>
                     </div>
-                    <div className='education-block-main' data-aos="fade-right" data-aos-duration="1400" data-aos-delay="100"  style={{ "--hover-color": color }}>
+                    <div className='education-block-main' data-aos="fade-right" data-aos-duration="1400" data-aos-delay="100" style={{ "--hover-color": color }}>
                         <div className='education-block' >
                             <div className='education-block-contents' >
 
@@ -51,7 +51,7 @@ function Education() {
                         </div>
                         <div className='education-block-hover' ></div>
                     </div>
-                    <div className='education-block-main' data-aos="fade-right" data-aos-duration="1400" data-aos-delay="100"  style={{ "--hover-color": color }}>
+                    <div className='education-block-main' data-aos="fade-right" data-aos-duration="1400" data-aos-delay="100" style={{ "--hover-color": color }}>
                         <div className='education-block' >
                             <div className='education-block-contents' >
                                 <div className='year mb-2' style={{ backgroundColor: color }}>

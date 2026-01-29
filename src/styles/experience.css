@@ -1,123 +1,148 @@
-.education {
+.experience {
     padding-top: 50px;
     padding-bottom: 70px;
 }
 
 /* title section */
-.education-title {
+.experience-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.education-title h2 {
+.experience-title h2 {
     margin-top: -17px;
     font-weight: 600;
     font-family: "Geologica", "sans-serif";
     font-size: 38px;
 }
 
-.education-title p {
+.experience-title p {
     color: rgb(162, 162, 162);
 }
 
 
 /* block section */
 
-.education-block-section {
+.experience-block-section {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* Stack vertically */
     align-items: center;
     justify-content: center;
     gap: 35px;
     padding-top: 50px;
     margin: 0 auto;
+    width: 80%;
+    /* Match about section width */
 }
 
-.education-block-main {
+.experience-block-main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    ;
+    width: 100%;
+    /* Full width of container */
 }
 
-.education-block {
-    width: 590px;
-    height: 200px;
-    padding: 20px;
+.experience-block {
+    width: 100%;
+    /* Full width */
+    min-height: 200px;
+    height: auto;
+    padding: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.company-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+}
 
-.darkmode .education-block {
+.experience-date {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(162, 162, 162);
+    font-family: "Geologica", "sans-serif";
+    margin: 0;
+}
+
+.experience-desc {
+    text-align: justify;
+    margin-top: 15px;
+    font-size: 14px;
+    color: rgb(162, 162, 162);
+    font-family: "Geologica", "sans-serif";
+    line-height: 1.6;
+}
+
+
+.darkmode .experience-block {
     background-color: #161616;
 }
 
-.lightmode .education-block {
+.lightmode .experience-block {
     background-color: rgb(233 233 233)
 }
 
-.education-block h6 {
+.experience-block h6 {
     color: rgb(162, 162, 162);
     font-weight: 500;
     font-size: 15px;
     font-family: "Geologica", "sans-serif";
 }
 
-.education-block h4 {
+.experience-block h4 {
     font-family: "Geologica", "sans-serif";
     font-weight: 600;
     font-size: 22px;
     padding-top: 6px;
 }
 
-.lightmode .education-block h4 {
+.lightmode .experience-block h4 {
     color: black;
 }
 
-.darkmode .education-block h4 {
+.darkmode .experience-block h4 {
     color: #ffff;
 }
 
 
+/* Reusing year styles from education.css if globally available, otherwise redefining */
 .year {
     display: inline-flex;
-    /* Inline element with flex behavior */
     justify-content: center;
     align-items: center;
     padding: 0 8px;
-    /* Add horizontal padding for spacing */
     height: 25px;
-    /* Keep a fixed height */
     border-radius: 4px;
-    /* Rounded corners */
     color: white;
-    /* Text color */
     font-weight: 700;
-    /* Bold text */
     white-space: nowrap;
-    /* Prevent text wrapping */
 }
 
 .year p {
     margin: 0;
-    /* Remove extra space around the text */
     font-size: 12px;
     font-weight: 700;
 }
 
 
 /* hover section */
-.education-block-hover {
+.experience-block-hover {
     height: 2px;
-    width: 590px;
+    width: 100%;
+    /* Full width */
 }
 
-.education-block-main:hover .education-block-hover {
+.experience-block-main:hover .experience-block-hover {
     background-color: var(--hover-color);
     transition: background-color 0.3s ease;
 }
@@ -125,44 +150,37 @@
 
 @media (max-width: 768px) {
 
-    .education {
-        padding-top: 80px;
+    .experience {
+        padding-top: 10px;
         padding-bottom: 0%;
     }
 
-    .education-title h2 {
+    .experience-title h2 {
         margin-top: -17px;
         font-weight: 600;
         font-family: "Geologica", "sans-serif";
         font-size: 28px;
     }
 
-    .education-title p {
+    .experience-title p {
         font-size: 14px;
     }
 
-    .education-block {
-        width: 295px;
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .education-block-contents {
+    .experience-block-section {
         width: 90%;
-        padding-left: 10px;
     }
 
-    .education-block-hover {
-        width: 295px;
+    .experience-block {
+        height: auto;
+        /* Allow auto height on small screens */
+        padding: 30px;
     }
 
-    .education-block h4 {
+    .experience-block h4 {
         font-size: 20px;
     }
 
-    .education-block h6 {
+    .experience-block h6 {
         font-size: 13px;
     }
 

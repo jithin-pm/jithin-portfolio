@@ -1,12 +1,13 @@
 /* about-me text section */
 .about {
-   padding-top: 50px;
     padding-bottom: 50px;
+    padding-top: 20px;
 }
 
 .text-container {
     text-align: center;
 }
+
 .text-container h1 {
     font-size: 45px;
     font-family: "Geologica", "sans-serif";
@@ -26,7 +27,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 80px;   
+    gap: 80px;
     margin: 0 auto;
     padding-top: 100px;
     width: 80%;
@@ -35,9 +36,11 @@
 
 /* about-me image styling */
 
-.about-me-img img {
-    border-radius: 20px;
-    width: 425px;
+.about-me-img .hover-image-container {
+    border-radius: 0px;
+    width: 460px;
+    overflow: hidden;
+    /* Ensure images don't overflow border-radius */
 }
 
 
@@ -60,27 +63,30 @@
 
 .about-me-description p {
     color: rgb(162, 162, 162);
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 450;
 }
 
 .responsive-span {
-    display: inline; /* Default for larger screens */
-  }
+    display: inline;
+    /* Default for larger screens */
+}
 
 .about-me-description hr {
     margin-top: 20px;
 }
 
 
+
 .about-me-description-details p {
     color: rgb(162, 162, 162);
     font-weight: 500;
+    font-size: 16px;
 }
 
 .about-me-description-details span {
     color: rgb(162, 162, 162);
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .btn-icons {
@@ -97,7 +103,7 @@
     font-size: max(1vw, 13px);
     border-radius: 40px;
     font-family: "Poppins", sans-serif;
-    
+
 }
 
 .btn-icons button:hover {
@@ -129,11 +135,9 @@
 }
 
 
-  @media (max-width: 768px) {
-   
-    .about {
-        margin-top: -220px;
-    }
+@media (max-width: 1024px) {
+
+
 
     .text-container h1 {
         font-size: 30px;
@@ -144,7 +148,7 @@
 
     .text-container h5 {
         font-weight: 550;
-        font-size: 17px;   
+        font-size: 17px;
     }
 
     .about-me {
@@ -154,7 +158,7 @@
         padding-top: 50px;
     }
 
-    .about-me-img img {
+    .about-me-img .hover-image-container {
         width: 220px;
     }
 
@@ -163,9 +167,10 @@
     }
 
     .responsive-span {
-        display: block; /* Force the span to the next line */
-         /* Optional spacing */
-      }
+        display: block;
+        /* Force the span to the next line */
+        /* Optional spacing */
+    }
 
     .about-me-description {
         width: 95%;
@@ -196,6 +201,7 @@
         border-radius: 40px;
         font-family: "Poppins", sans-serif;
     }
+
     .icons {
         gap: 15px;
     }

@@ -3,13 +3,16 @@ import { useEffect, useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll'; // For smooth scrolling
 import Landing from './components/Landing';
 import About from './components/About';
+import Experience from './components/Experience';
 import Aos from 'aos';
 import Education from './components/Education';
 import Services from './components/Services';
+import Projects from './components/Projects';
 import Skill from './components/Skill';
 import Contact from './components/Contact';
 import { ToastContainer, Zoom } from 'react-toastify';
 import ColorSwitcher from './components/ColorSwitcher';
+
 
 function App() {
 
@@ -81,19 +84,22 @@ function App() {
               )}
             </div>
             <div className={`header-links ${showSidebar ? 'visible' : 'hidden'}`}>
-              <ScrollLink  onClick={() => setShowSidebar(false)} to="about" smooth={true} duration={500}>
+              <ScrollLink onClick={() => setShowSidebar(false)} to="about" smooth={true} duration={500}>
                 <h6>ABOUT</h6>
               </ScrollLink>
-              <ScrollLink  onClick={() => setShowSidebar(false)} to="education" smooth={true} duration={500}>
+              <ScrollLink onClick={() => setShowSidebar(false)} to="education" smooth={true} duration={500}>
                 <h6>EDUCATION</h6>
               </ScrollLink>
-              <ScrollLink  onClick={() => setShowSidebar(false)} to="services" smooth={true} duration={500}>
+              <ScrollLink onClick={() => setShowSidebar(false)} to="services" smooth={true} duration={500}>
                 <h6>SERVICES</h6>
               </ScrollLink>
-              <ScrollLink  onClick={() => setShowSidebar(false)} to="skills" smooth={true} duration={500}>
+              <ScrollLink onClick={() => setShowSidebar(false)} to="projects" smooth={true} duration={500}>
+                <h6>PROJECTS</h6>
+              </ScrollLink>
+              <ScrollLink onClick={() => setShowSidebar(false)} to="skills" smooth={true} duration={500}>
                 <h6>SKILLS</h6>
               </ScrollLink>
-              <ScrollLink  onClick={() => setShowSidebar(false)} to="contact" smooth={true} duration={500}>
+              <ScrollLink onClick={() => setShowSidebar(false)} to="contact" smooth={true} duration={500}>
                 <h6>CONTACT</h6>
               </ScrollLink>
               <div className="mb-2" style={{ width: '1px' }}>
@@ -105,16 +111,25 @@ function App() {
               </div>
             </div>
           </div>
+
+
           <Landing />
+
           <ColorSwitcher />
           <div id="about">
             <About />
+          </div>
+          <div id="experience">
+            <Experience />
           </div>
           <div id='education' >
             <Education />
           </div>
           <div id="services">
             <Services />
+          </div>
+          <div id="projects">
+            <Projects />
           </div>
           <div id='skills' >
             <Skill />
