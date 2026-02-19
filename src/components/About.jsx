@@ -4,9 +4,7 @@ import { ColorContext } from '../context/ContextShare';
 import about from '../assets/jithin.jpeg'
 import aboutHover from '../assets/jithin-hover.png'
 import HoverImage from './HoverImage';
-import { useState } from 'react';
 import { PiHandWaving } from "react-icons/pi";
-import { FiPenTool } from "react-icons/fi";
 import { HiOutlineSparkles } from 'react-icons/hi';
 import { IoCodeSlashOutline } from 'react-icons/io5';
 import { LuPenTool } from 'react-icons/lu';
