@@ -1,10 +1,10 @@
 .projects {
-    padding-top: 60px;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-bottom: 90px;
+    padding-bottom: 120px;
 }
 
 /* heading section */
@@ -13,10 +13,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .projects-heading p {
     color: rgb(162, 162, 162);
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
 .projects-heading h2 {
@@ -29,180 +32,212 @@
 .projects-block-main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    gap: 30px;
     margin-top: 50px;
-    max-width: 1250px;
+    margin-top: 50px;
+    width: 80%;
     justify-items: center;
 }
 
 .project-card-container {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
 }
 
 .project-card {
-    width: 380px;
-    height: 480px;
-    padding: 0;
-    /* Remove default padding to let image bleed */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 15px;
-    overflow: hidden;
-    /* Ensure image respects border radius */
-    position: relative;
-    /* For absolute positioning if needed */
-}
-
-.project-img-container {
     width: 100%;
-    height: 200px;
-    /* Fixed height for image area */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.05);
-    /* Subtle background for placeholders */
+    height: 350px;
+    /* Fixed height for consistent grid */
+    border-radius: 0px;
     overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: #000;
+    /* Fallback */
 }
 
-.project-img-container img {
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Background Image Layer */
+.project-bg-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.project-bg-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease, filter 0.6s ease;
+    filter: brightness(0.85);
+    /* Slightly darken by default */
 }
 
-.project-card:hover .project-img-container img {
+/* Zoom effect on hover */
+.project-card:hover .project-bg-image img {
     transform: scale(1.1);
+    filter: brightness(0.6) blur(2px);
+    /* Darken and blur more on hover to make text pop */
 }
 
 .project-placeholder-icon {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    background-color: #222;
 }
 
-.project-card-contents {
+/* Content Overlay Layer */
+.project-content-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7) 40%, transparent);
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 25px;
-    /* Add padding back for content */
-    flex-grow: 1;
+    justify-content: flex-end;
+    transition: all 0.4s ease;
+    transform: translateY(0);
+    /* Default state */
 }
 
-.project-title-row {
+/* Header Section (Always Visible) */
+/* Header Section (Always Visible) */
+.project-title-group {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    margin-bottom: 15px;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
-.project-title-row h3 {
+.project-header h3 {
     font-family: "Geologica", "sans-serif";
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
     margin: 0;
-    font-size: 22px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.project-links {
+.project-title-link {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    transition: all 0.3s ease;
     display: flex;
-    gap: 15px;
+    align-items: center;
+    justify-content: center;
 }
 
-.project-links a {
-    color: rgb(162, 162, 162);
-    transition: 0.3s;
-}
-
-.project-links a:hover {
+.project-title-link:hover {
     color: var(--hover-color);
+    transform: scale(1.1) translate(2px, -2px);
+    opacity: 1;
 }
 
+.project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+    transition: margin 0.4s ease;
+}
+
+.tech-badge {
+    font-size: 11px;
+    font-weight: 400;
+    padding: 3px 8px;
+    font-family: "Geologica", "sans-serif";
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: none;
+    /* Normal case */
+    letter-spacing: 0;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: 4px;
+    backdrop-filter: blur(2px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+/* Hover State: Brighten */
+.project-card:hover .tech-badge {
+    border-color: transparent;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Details Section (Hidden/Collapsed initially) */
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(20px);
+}
 
 .project-desc {
-    font-size: 14px;
-    color: rgb(162, 162, 162);
-    font-family: "Geologica", "sans-serif";
-    margin-top: 5px;
-    flex-grow: 1;
-    line-height: 1.6;
-}
-
-.project-tech {
     font-size: 13px;
     color: rgb(162, 162, 162);
+    margin-top: 15px;
+    margin-bottom: 20px;
     font-family: "Geologica", "sans-serif";
-    font-weight: 600;
-    margin-top: 20px;
 }
 
-.lightmode .project-card {
-    background-color: rgb(233 233 233);
+/* Reveal Details on Hover */
+.project-card:hover .project-details {
+    max-height: 200px;
+    /* Arbitrary large limit */
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.darkmode .project-card {
-    background-color: #161616;
+.project-card:hover .project-content-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.98) 10%, rgba(0, 0, 0, 0.9) 60%, transparent);
+    padding-bottom: 35px;
+    /* Slight lift */
 }
 
-.darkmode .project-card h3 {
-    color: #ffff;
+/* Ensure tech stack separates nicely when expanded */
+.project-card:hover .project-tech-stack {
+    margin-bottom: 0;
 }
 
-.lightmode .project-card h3 {
-    color: black;
-}
+/* Links */
 
-.project-hover-div {
-    width: 380px;
-    height: 2px;
-}
 
-.project-card-container:hover .project-hover-div {
-    background-color: var(--hover-color);
-    transition: background-color 0.3s ease;
-}
-
+/* Responsive adjustments */
 @media (max-width: 1200px) {
     .projects-block-main {
         grid-template-columns: repeat(2, 1fr);
-        width: 90%;
     }
 }
 
 @media (max-width: 768px) {
-    .projects {
-        padding-top: 80px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .projects-heading h2 {
-        font-size: 28px;
-    }
-
-    .projects-heading p {
-        font-size: 14px;
-    }
-
     .projects-block-main {
-        margin-top: 30px;
-        width: 100%;
         grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .project-card {
-        width: 100%;
-        height: auto;
-        min-height: 400px;
+        height: 350px;
     }
 
-    .project-hover-div {
-        width: 100%;
-    }
+    /* On Mobile, show a bit more */
+
 }

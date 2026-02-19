@@ -2,9 +2,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    min-height: 90vh;
     margin: 0%;
     padding: 0%;
+    padding-top: 100px;
+    /* Offset for fixed header */
     gap: 30px;
 }
 
@@ -15,16 +17,22 @@
 }
 
 .name-role h1 {
-    font-size: 70px;
+    font-size: 80px;
     font-weight: 700;
     margin: 0;
+    font-family: "Shadows Into Light", serif;
+    letter-spacing: 3px;
 }
 
 .name-role span {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 700;
     margin: 10px 0;
     font-family: "Geologica";
+}
+
+.name-role h3 {
+    padding-top: 5px;
 }
 
 .name-role span {

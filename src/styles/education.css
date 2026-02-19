@@ -142,7 +142,7 @@
     }
 
     .education-block {
-        width: 295px;
+        width: 380px;
         height: 200px;
         display: flex;
         align-items: center;
@@ -155,7 +155,7 @@
     }
 
     .education-block-hover {
-        width: 295px;
+        width: 380px;
     }
 
     .education-block h4 {

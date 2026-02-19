@@ -4,6 +4,12 @@ import { ColorContext } from '../context/ContextShare';
 import about from '../assets/jithin.jpeg'
 import aboutHover from '../assets/jithin-hover.png'
 import HoverImage from './HoverImage';
+import { useState } from 'react';
+import { PiHandWaving } from "react-icons/pi";
+import { FiPenTool } from "react-icons/fi";
+import { HiOutlineSparkles } from 'react-icons/hi';
+import { IoCodeSlashOutline } from 'react-icons/io5';
+import { LuPenTool } from 'react-icons/lu';
 
 function About() {
     const { color, setColor } = useContext(ColorContext);
@@ -19,28 +25,29 @@ function About() {
                         <HoverImage baseSrc={about} hoverSrc={aboutHover} alt="Jithin PM" />
                     </div>
 
-                    <div className='about-me-description' data-aos="fade-up" data-aos-duration="1200"  >
-
-                     {/*    <h4 style={{ color }} >Who am i ?</h4> */}
-                        <h2 className='mt-1' >I'm Jithin , <span className="responsive-span" style={{ color }} >A Mern Stack Developer</span></h2>
-                        <p>I’m a software and web developer specializing in the MERN stack, with over a year of industry experience
-                            in building efficient, full-stack web applications. I have worked on a range of projects that reflect my
-                            ability to develop scalable architectures, create user-friendly interfaces, and deliver dependable, high-quality
-                            solutions. My approach emphasizes clean coding practices, modern development standards, and performance
-                            optimization to ensure seamless user experiences. I am passionate about continuous growth and contributing
-                            to innovative, team-driven projects</p>
-
-                        <hr />
-                        <div className='about-me-description-details' data-aos="fade-right" data-aos-duration="1600"  >
-                            <p>Name :<span> Jithin pm</span></p>
-                            <p>Email : <span>jithinpm.official@gmail.com</span> </p>
-                            <p>Age : <span>23</span></p>
-                            <p>Location : <span>Kerala ,India</span></p>
+                    <div className='about-me-description' data-aos="fade-up" data-aos-duration="1200">
+                        <div className="new-intro-container">
+                            <h2 className="intro-text">
+                                Hi, I am <span className="name-pill" style={{ fontWeight: "bold", letterSpacing: "2px", color: color }} >Jithin pm</span> <PiHandWaving style={{ verticalAlign: 'middle' }} />,
+                                <span> a</span> <span className="role-pill" >MERN</span> Developer. I design <LuPenTool style={{ verticalAlign: 'middle' }} />
+                                <span> and build fast, scalable, user first web experiences</span> <HiOutlineSparkles style={{ verticalAlign: 'middle' }} />
+                                <span> with clean, maintainable code</span> <IoCodeSlashOutline style={{ verticalAlign: 'middle' }} />
+                                <span> and modern, impactful </span><span style={{ fontStyle: "italic", color: color }} >design</span>
+                                <span> that delivers real value.</span>
+                            </h2>
+                            <hr />
+                            <div className='about-me-description-details' data-aos="fade-right" data-aos-duration="1600"  >
+                                <p>Name :<span>Jithin pm</span></p>
+                                <p>Email : <span>jithinpm.official@gmail.com</span> </p>
+                                <p>Age : <span>23</span></p>
+                                <p>Location : <span>Kerala ,India</span></p>
+                            </div>
                         </div>
-                        <div className='btn-icons'>
-                            <a href="/jithin-resume.pdf" download="jithin-resume.pdf">
-                                <button className='mt-3' style={{ backgroundColor: color }} >Download CV</button></a>
-                            <div className='icons mt-3' >
+
+                        <div className='btn-icons mt-5'>
+                            <a className='about-btn' href="/jithin-resume.pdf" download="jithin-resume.pdf">
+                                <button className='' style={{ backgroundColor: color }}>Download CV</button></a>
+                            <div className='icons' >
                                 <a href="https://www.linkedin.com/in/jithin-pm-403241285/" target="_blank" rel="noopener noreferrer" ><i className="fa-brands fa-linkedin-in fa-xl"></i></a>
                                 <a href="https://github.com/jithin-pm" target="_blank" rel="noopener noreferrer" ><i className="fa-brands fa-github fa-xl"></i></a>
                                 <a href="https://www.instagram.com/jithin.pm_/?next=%2F" target="_blank" rel="noopener noreferrer" ><i className="fa-brands fa-instagram fa-xl"></i></a>

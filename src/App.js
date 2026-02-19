@@ -12,6 +12,7 @@ import Skill from './components/Skill';
 import Contact from './components/Contact';
 import { ToastContainer, Zoom } from 'react-toastify';
 import ColorSwitcher from './components/ColorSwitcher';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 
 function App() {
@@ -35,6 +36,17 @@ function App() {
   //for aos
   useEffect(() => {
     Aos.init();
+  }, []);
+
+  // Close sidebar on resize if screen becomes large
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setShowSidebar(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
 
@@ -70,7 +82,7 @@ function App() {
       ) : (
         <div className={theme ? 'lightmode' : 'darkmode'}>
           {/* Header Section */}
-          <div className="header">
+          <div className={`header ${showSidebar ? 'sidebar-active' : ''}`}>
             <div className="header-text">
               <h4>
                 jithin<span>:)</span>
@@ -80,29 +92,49 @@ function App() {
               {showSidebar ? (
                 <i className="fa-solid fa-xmark fa-xl mb-3" onClick={toggleSidebar}></i>
               ) : (
-                <i className="fa-solid fa-bars fa-xl mb-3" onClick={toggleSidebar}></i>
+                <GiHamburgerMenu size={25} className="mb-3" onClick={toggleSidebar} style={{ cursor: 'pointer' }} />
               )}
             </div>
+            {/* Backdrop */}
+            {showSidebar && (
+              <div className="backdrop" onClick={toggleSidebar}></div>
+            )}
             <div className={`header-links ${showSidebar ? 'visible' : 'hidden'}`}>
-              <ScrollLink onClick={() => setShowSidebar(false)} to="about" smooth={true} duration={500}>
-                <h6>ABOUT</h6>
+              <div className="mobile-menu-header">
+                <div className="header-text">
+                  <h4>
+                    jithin<span>:)</span>
+                  </h4>
+                </div>
+                <i className="fa-solid fa-xmark fa-xl" onClick={toggleSidebar}></i>
+              </div>
+
+              <ScrollLink onClick={() => setShowSidebar(false)} to="landing" smooth={true} duration={500}>
+                <h6 className="nav-link-text">HOME</h6>
               </ScrollLink>
-              <ScrollLink onClick={() => setShowSidebar(false)} to="education" smooth={true} duration={500}>
-                <h6>EDUCATION</h6>
+              <ScrollLink onClick={() => setShowSidebar(false)} to="about" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -55 : -50}>
+                <h6 className="nav-link-text">ABOUT</h6>
               </ScrollLink>
-              <ScrollLink onClick={() => setShowSidebar(false)} to="services" smooth={true} duration={500}>
-                <h6>SERVICES</h6>
+              <ScrollLink onClick={() => setShowSidebar(false)} to="services" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -5 : -25}>
+                <h6 className="nav-link-text">SERVICES</h6>
               </ScrollLink>
-              <ScrollLink onClick={() => setShowSidebar(false)} to="projects" smooth={true} duration={500}>
-                <h6>PROJECTS</h6>
+              <ScrollLink onClick={() => setShowSidebar(false)} to="projects" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -5 : 0}>
+                <h6 className="nav-link-text">WORKS</h6>
               </ScrollLink>
-              <ScrollLink onClick={() => setShowSidebar(false)} to="skills" smooth={true} duration={500}>
-                <h6>SKILLS</h6>
+              <ScrollLink onClick={() => setShowSidebar(false)} to="contact" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -25 : -30}>
+                <h6 className="nav-link-text">CONTACT</h6>
               </ScrollLink>
-              <ScrollLink onClick={() => setShowSidebar(false)} to="contact" smooth={true} duration={500}>
-                <h6>CONTACT</h6>
-              </ScrollLink>
-              <div className="mb-2" style={{ width: '1px' }}>
+
+              <div className="mobile-menu-footer">
+                <hr className="menu-divider" />
+                <p className="follow-me-label">FOLLOW ME</p>
+                <div className="mobile-social-links">
+                  <a href="https://www.instagram.com/jithin.pm_/?next=%2F" target="_blank" rel="noopener noreferrer">INSTAGRAM &rarr;</a>
+                  <a href="https://www.linkedin.com/in/jithin-pm-403241285/" target="_blank" rel="noopener noreferrer">LINKEDIN &rarr;</a>
+                </div>
+              </div>
+
+              <div className="theme-switcher">
                 {theme ? (
                   <i className="fa-solid fa-moon fa-lg" onClick={handleToggle}></i>
                 ) : (
@@ -113,7 +145,9 @@ function App() {
           </div>
 
 
-          <Landing />
+          <div id="landing">
+            <Landing />
+          </div>
 
           <ColorSwitcher />
           <div id="about">

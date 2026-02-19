@@ -10,7 +10,7 @@ function Landing() {
 
       <div className='landing' >
         <div className='name-role'>
-          <h1>Jithin Pm</h1>
+          <h1>Jithin pm</h1>
           <h3>I'm a <span style={{ color, borderLeft: "2px color" }} className='ms-1'></span></h3>
         </div>
         <div className='landing-image' >
