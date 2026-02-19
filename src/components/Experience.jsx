@@ -3,7 +3,7 @@ import '../styles/experience.css'
 import { ColorContext } from '../context/ContextShare';
 
 function Experience() {
-    const { color, setColor } = useContext(ColorContext);
+    const { color } = useContext(ColorContext);
 
     return (
         <>

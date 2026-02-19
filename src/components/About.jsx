@@ -10,7 +10,7 @@ import { IoCodeSlashOutline } from 'react-icons/io5';
 import { LuPenTool } from 'react-icons/lu';
 
 function About() {
-    const { color, setColor } = useContext(ColorContext);
+    const { color } = useContext(ColorContext);
     return (
         <>
             <div className="about">

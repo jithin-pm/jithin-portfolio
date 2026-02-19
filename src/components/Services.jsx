@@ -3,7 +3,7 @@ import '../styles/service.css'
 import { ColorContext } from '../context/ContextShare';
 
 function Services() {
-    const { color, setColor } = useContext(ColorContext);
+    const { color } = useContext(ColorContext);
     return (
         <>
 
@@ -22,9 +22,9 @@ function Services() {
                                 <p>Building modern, high-performance web applications with clean, efficient code that meets the latest industry standards.</p>
                             </div>
                         </div>
-                        <div className="services-hover-div"  data-aos="fade-right" data-aos-duration="1400"></div>
+                        <div className="services-hover-div" data-aos="fade-right" data-aos-duration="1400"></div>
                     </div>
-                    <div className='block' style={{ "--hover-color": color }}  data-aos="fade-right" data-aos-duration="1400" data-aos-delay="100"    >
+                    <div className='block' style={{ "--hover-color": color }} data-aos="fade-right" data-aos-duration="1400" data-aos-delay="100"    >
                         <div className='services-block' >
                             <div className='services-block-contents'  >
                                 <i className="fa-solid fa-mobile-screen-button fa-xl" style={{ color }}></i>
@@ -35,7 +35,7 @@ function Services() {
                         <div className="services-hover-div" data-aos="fade-right" data-aos-duration="1400" data-aos-delay="100"></div>
                     </div>
 
-                    <div className='block' style={{ "--hover-color": color }}  data-aos="fade-right" data-aos-duration="1400" data-aos-delay="200" >
+                    <div className='block' style={{ "--hover-color": color }} data-aos="fade-right" data-aos-duration="1400" data-aos-delay="200" >
                         <div className='services-block'  >
                             <div className='services-block-contents' >
                                 <i className="fa-solid fa-server fa-2xl" style={{ color }}></i>
@@ -43,10 +43,10 @@ function Services() {
                                 <p>Developing robust and scalable server-side logic, ensuring smooth data processing, and optimizing application performance.</p>
                             </div>
                         </div>
-                        <div className="services-hover-div"  data-aos="fade-right" data-aos-duration="1400" data-aos-delay="200" ></div>
+                        <div className="services-hover-div" data-aos="fade-right" data-aos-duration="1400" data-aos-delay="200" ></div>
                     </div>
 
-                    <div className='block' style={{ "--hover-color": color }}  data-aos="fade-right" data-aos-duration="1400" >
+                    <div className='block' style={{ "--hover-color": color }} data-aos="fade-right" data-aos-duration="1400" >
                         <div className='services-block'   >
                             <div className='services-block-contents' >
                                 <i className="fa-solid fa-database fa-2xl" style={{ color }}></i>
@@ -57,7 +57,7 @@ function Services() {
                         <div className="services-hover-div" data-aos="fade-right" data-aos-duration="1400" ></div>
                     </div>
 
-                    <div className='block' style={{ "--hover-color": color }}  data-aos="fade-right" data-aos-duration="1400" data-aos-delay="100"  >
+                    <div className='block' style={{ "--hover-color": color }} data-aos="fade-right" data-aos-duration="1400" data-aos-delay="100"  >
                         <div className='services-block'  >
                             <div className='services-block-contents' >
                                 <i className="fa-solid fa-screwdriver-wrench fa-2xl" style={{ color }}></i>
@@ -68,7 +68,7 @@ function Services() {
                         <div className="services-hover-div" data-aos="fade-right" data-aos-duration="1400" data-aos-delay="100" ></div>
                     </div>
 
-                    <div className='block' style={{ "--hover-color": color }}  data-aos="fade-right" data-aos-duration="1400" data-aos-delay="200"  >
+                    <div className='block' style={{ "--hover-color": color }} data-aos="fade-right" data-aos-duration="1400" data-aos-delay="200"  >
                         <div className='services-block'  >
                             <div className='services-block-contents' >
                                 <i className="fa-brands fa-html5 fa-2xl" style={{ color }}></i>

@@ -20,7 +20,6 @@ const HoverImage = ({ baseSrc, hoverSrc, alt, className }) => {
         setIsHovered(false);
     };
 
-    const radius = isHovered ? 150 : 0;
     // We keep the mask position even when not hovered so it closes naturally if we animate radius,
     // though for simple implementation sticking to boolean is fine.
 

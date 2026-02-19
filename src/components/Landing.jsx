@@ -4,7 +4,7 @@ import { ColorContext } from '../context/ContextShare';
 import landingImage from '../assets/landingImage.png.png'
 
 function Landing() {
-  const { color, setColor } = useContext(ColorContext);
+  const { color } = useContext(ColorContext);
   return (
     <>
 

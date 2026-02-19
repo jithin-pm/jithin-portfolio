@@ -3,7 +3,7 @@ import '../styles/education.css'
 import { ColorContext } from '../context/ContextShare';
 
 function Education() {
-    const { color, setColor } = useContext(ColorContext);
+    const { color } = useContext(ColorContext);
 
     return (
         <>
