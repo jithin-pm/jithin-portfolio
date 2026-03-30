@@ -14,6 +14,10 @@ import { ToastContainer, Zoom } from 'react-toastify';
 import ColorSwitcher from './components/ColorSwitcher';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
+// Import images for preloading
+import landingImage from './assets/landingImage.png.png';
+import aboutImage from './assets/jithin.jpeg';
+
 
 function App() {
 
@@ -25,11 +29,35 @@ function App() {
   });
 
 
-  //for hiding splash screen
+  // preload images to hide splash screen dynamically, with a minimum 3s wait
   useEffect(() => {
-    // Hide the splash screen after 3 seconds
-    const timer = setTimeout(() => setShowSplash(false), 3000);
-    return () => clearTimeout(timer); // Clean up the timer
+    const imagesToLoad = [landingImage, aboutImage];
+
+    // Guarantee the splash screen displays for at least 3 seconds
+    const minWaitPromise = new Promise((resolve) => setTimeout(resolve, 3000));
+
+    // Wait for all specific images to load (or fail, so we don't block forever)
+    const imagesReadyPromise = Promise.all(
+      imagesToLoad.map((src) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve;
+          img.onerror = resolve;
+        });
+      })
+    );
+
+    // Ensure the splash screen eventually hides even if something goes wrong
+    const fallbackTimer = setTimeout(() => setShowSplash(false), 8000);
+
+    // Wait for both conditions: 3s have passed AND images have loaded
+    Promise.all([minWaitPromise, imagesReadyPromise]).then(() => {
+      setShowSplash(false);
+      clearTimeout(fallbackTimer);
+    });
+
+    return () => clearTimeout(fallbackTimer);
   }, []);
 
 

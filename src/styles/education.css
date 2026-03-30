@@ -27,12 +27,14 @@
 
 .education-block-section {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 35px;
     padding-top: 50px;
     margin: 0 auto;
+    width: 80%;
 }
 
 .education-block-main {
@@ -40,13 +42,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    ;
+    width: calc(50% - 20px);
 }
 
 .education-block {
-    width: 590px;
-    height: 200px;
-    padding: 20px;
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+    padding: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,7 +117,7 @@
 /* hover section */
 .education-block-hover {
     height: 2px;
-    width: 590px;
+    width: 100%;
 }
 
 .education-block-main:hover .education-block-hover {
@@ -141,21 +144,23 @@
         font-size: 14px;
     }
 
+    .education-block-section {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .education-block-main {
+        width: 100%;
+    }
+
     .education-block {
-        width: 380px;
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: auto;
+        padding: 30px;
     }
 
     .education-block-contents {
         width: 90%;
         padding-left: 10px;
-    }
-
-    .education-block-hover {
-        width: 380px;
     }
 
     .education-block h4 {
