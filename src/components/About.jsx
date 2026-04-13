@@ -43,7 +43,7 @@ function About() {
                         </div>
 
                         <div className='btn-icons mt-5'>
-                            <a className='about-btn' href="/jithin-resume.pdf" download="jithin-resume.pdf">
+                            <a className='about-btn' href="/Jithinpm_Resume.pdf" download="Jithinpm_Resume.pdf">
                                 <button className='' style={{ backgroundColor: color }}>Download CV</button></a>
                             <div className='icons' >
                                 <a href="https://www.linkedin.com/in/jithin-pm-403241285/" target="_blank" rel="noopener noreferrer" ><i className="fa-brands fa-linkedin-in fa-xl"></i></a>

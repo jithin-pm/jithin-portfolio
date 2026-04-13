@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../styles/projects.css'
 import { ColorContext } from '../context/ContextShare';
 import IshttamImg from '../assets/ishttam.png';
@@ -7,22 +8,17 @@ import DavidsAcademyImg from '../assets/davidsAcademy.png';
 import ShifaClinicImg from '../assets/shifaClinic.png';
 import GlobalWebImg from '../assets/globalwebproduction.png';
 import DrInImg from '../assets/DR.IN.png';
+import DatsheetsImg from '../assets/datsheets.png';
+import YashfiImg from '../assets/yashfi.png';
 
 function Projects() {
     const { color } = useContext(ColorContext);
+    const navigate = useNavigate();
 
     const projects = [
         {
-            title: "Ishttam Marry",
-            description: "A comprehensive matrimonial platform designed for finding compatible partners. Features include advanced matching, real-time chat, and connection requests. Includes a robust admin panel for user management and premium subscriptions.",
-            tech: "React, Node.js, Socket.io, MySQL, Tailwind",
-            github: "#",
-            live: "https://ishtammarry.com/",
-            image: IshttamImg
-        },
-        {
             title: "Bhakshanangal Foods",
-            description: "A global marketplace for authentic Kerala delicacies. Features automated currency conversion, secure payments, and smart shipping integration, managed through a comprehensive admin dashboard.",
+            description: "An ecommerce platform for authentic Kerala delicacies. Features automated currency conversion, secure payments, and smart shipping integration, managed through a comprehensive admin dashboard.",
             tech: "React, Node.js, Stripe, Shiprocket, Google Translate",
             github: "#",
             live: "https://bhakshanangal.com/",
@@ -30,7 +26,7 @@ function Projects() {
         },
         {
             title: "David's Academy",
-            description: "A full-featured learning platform with exams, question banks, and recorded classes. Supports 10+ question types and comprehensive student analytics. Includes a robust admin panel for content and user management.",
+            description: "A comprehensive LMS & Assessment Platform with live exams, question banks, and recorded classes. Supports 10+ question types and comprehensive student analytics.",
             tech: "React, MySQL, Node.js, CSS",
             github: "#",
             live: "https://davids-academy.com/",
@@ -45,20 +41,28 @@ function Projects() {
             image: ShifaClinicImg
         },
         {
-            title: "Global Web Production",
-            description: "A static UI-oriented website showcasing creative design and responsive layouts. Built with a focus on visual aesthetics and performance.",
-            tech: "React, Tailwind",
+            title: "Yashfi Foundation",
+            description: "A charity donation platform that enables users to contribute funds seamlessly. Yashfi Foundation allows secure online donations through Razorpay integration, ensuring a smooth and reliable giving experience.",
+            tech: "React, Node.js, Razorpay, Tailwind",
             github: "#",
-            live: "https://www.globalwebproduction.com/",
-            image: GlobalWebImg
+            live: "https://yashfifoundation.org/",
+            image: YashfiImg
         },
         {
-            title: "DR.IN",
-            description: "A comprehensive e-commerce platform featuring integrated Shiprocket for logistics and Razorpay for secure payments.",
-            tech: "React, Node.js, Razorpay, Shiprocket",
+            title: "Ishttam Marry",
+            description: "A comprehensive matrimonial platform designed for finding compatible partners. Features include advanced matching, real-time chat, and connection requests. Includes a robust admin panel for user management and premium subscriptions.",
+            tech: "React, Node.js, Socket.io, MySQL, Tailwind",
             github: "#",
-            live: "https://drinuser.lunarenterprises.co.in/",
-            image: DrInImg
+            live: "https://ishtammarry.com/",
+            image: IshttamImg
+        },
+        {
+            title: "Datsheets",
+            description: "An enterprise management platform for handling dynamic data sheets across multiple business operations. Features real-time multi-user collaboration via Socket.io, allowing management of inventory, product details, and pricing in a spreadsheet-style interface with instant formula-based processing.",
+            tech: "React, Node.js, Socket.io, Redux, PostgreSQL",
+            github: "#",
+            live: "https://datsheets.in/",
+            image: DatsheetsImg
         }
     ]
 
@@ -108,6 +112,18 @@ function Projects() {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* View All Projects Button */}
+                <div className="view-all-btn-wrapper" data-aos="fade-up" data-aos-duration="1200">
+                    <button
+                        className="view-all-btn"
+                        style={{ '--btn-color': color }}
+                        onClick={() => navigate('/projects')}
+                    >
+                        <span className="vab-arrow">&#8212;</span>
+                        <span className="vab-text">VIEW ALL PROJECTS!</span>
+                    </button>
                 </div>
             </div>
         </>

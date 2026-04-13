@@ -69,7 +69,7 @@
 .fixed-icon {
     position: relative;
     /* Position of the icon inside the container */
-    padding: 17px;
+    padding: 17px 21px 17px 17px;
     cursor: pointer;
 }
 

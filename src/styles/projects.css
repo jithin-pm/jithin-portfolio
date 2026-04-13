@@ -241,3 +241,98 @@
     /* On Mobile, show a bit more */
 
 }
+
+/* ── View All Projects Button ── */
+.view-all-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+}
+
+.view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: color 0.35s ease;
+}
+
+/* Outer shape — forms the border */
+.view-all-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    z-index: 0;
+}
+
+/* Inner cover — creates the hollow interior and slides out on hover to 'fill' */
+.view-all-btn::after {
+    content: '';
+    position: absolute;
+    inset: 1.5px;
+    clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+    z-index: 0;
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lightmode .view-all-btn::after {
+    background: #fff;
+}
+
+.darkmode .view-all-btn::after {
+    background: #000;
+}
+
+.view-all-btn:hover::after {
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+/* Arrow dash */
+.vab-arrow {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 300;
+    transition: color 0.35s ease, transform 0.35s ease;
+    display: inline-block;
+}
+
+/* Label text */
+.vab-text {
+    position: relative;
+    z-index: 1;
+    font-family: "Geologica", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.35s ease;
+}
+
+/* On hover — invert text to contrast against filled background */
+.darkmode .view-all-btn:hover .vab-arrow,
+.darkmode .view-all-btn:hover .vab-text {
+    color: #111;
+}
+
+.lightmode .view-all-btn:hover .vab-arrow,
+.lightmode .view-all-btn:hover .vab-text {
+    color: #fff;
+}
+
+/* Arrow nudge on hover */
+.view-all-btn:hover .vab-arrow {
+    transform: translateX(4px);
+}
+
+

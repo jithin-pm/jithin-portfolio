@@ -88,7 +88,7 @@ h1 span:nth-child(7) {
 
 .darkmode,
 .lightmode {
-  transition: background-color 1s ease, color 0.3s ease;
+  transition: background-color 0.4s ease, color 0.3s ease;
 }
 
 .darkmode {
@@ -132,6 +132,11 @@ h1 span:nth-child(7) {
   font-style: normal;
   letter-spacing: 1px;
   font-size: 27px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.header-text h4:hover {
+  color: var(--brand-hover-color, inherit);
 }
 
 .header-text span {

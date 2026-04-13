@@ -1,0 +1,513 @@
+/* ═══════════════════════════════════════════
+   All Projects Page — Cinematic Split Design
+═══════════════════════════════════════════ */
+
+.ap-wrapper {
+    min-height: 100vh;
+    padding-bottom: 160px;
+    background-color: inherit;
+    color: inherit;
+    font-family: "Geologica", sans-serif;
+}
+
+/* ── Navbar ── */
+.ap-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.4s ease;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.darkmode .ap-navbar {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ap-brand {
+    font-family: "Shadows Into Light", serif;
+    font-weight: 450;
+    font-size: 27px;
+    text-decoration: none;
+    color: inherit;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+.ap-brand:hover { color: var(--brand-hover-color, inherit); }
+.ap-brand span { margin-left: 5px; }
+
+.ap-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.ap-home-link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 13px;
+    font-weight: 500; /* Increased and fixed weight to prevent shifts */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.ap-home-link:hover {
+    opacity: 1;
+    color: var(--home-hover-color, #888) !important;
+}
+
+.ap-theme-switcher {
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0.65;
+    transition: opacity 0.3s ease;
+    width: 24px; /* Fixed width to prevent layout shifts */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ap-theme-switcher:hover { opacity: 1; }
+
+/* ── Hero ── */
+.ap-hero {
+    min-height: 55vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 160px 8% 70px;
+    position: relative;
+}
+
+/* Decorative giant background text */
+.ap-hero::before {
+    content: 'WORKS';
+    position: absolute;
+    bottom: -20px;
+    right: 5%;
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: clamp(80px, 14vw, 200px);
+    opacity: 0.03;
+    letter-spacing: -5px;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.ap-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.ap-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.ap-hero-eyebrow-line {
+    width: 40px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.4;
+}
+
+.ap-hero-subtitle {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 500;
+    margin: 0;
+}
+
+.ap-hero-title {
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 1.0;
+    margin: 0 0 24px;
+    letter-spacing: -2px;
+}
+
+.ap-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ap-hero-accent-bar {
+    width: 150px;
+    height: 3px;
+    background: var(--theme-accent, #aaa);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.ap-hero-count {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* ── Cinematic Cards Container ── */
+.ap-cards-list {
+    padding: 60px 8% 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ── Single Cinematic Card ── */
+.ap-cine-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 380px;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    border-top: 1px solid rgba(128, 128, 128, 0.13);
+    overflow: hidden;
+    transition: border-color 0.4s ease;
+}
+
+.ap-cine-card:last-child {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.13);
+}
+
+/* Alternate: even cards flip the grid */
+.ap-cine-card.ap-cine-reverse {
+    direction: rtl;
+}
+.ap-cine-card.ap-cine-reverse > * {
+    direction: ltr;
+}
+
+/* ── Image Panel ── */
+.ap-cine-image-panel {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+    min-height: 340px;
+}
+
+.ap-cine-image-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.78) saturate(0.9);
+    transform: scale(1.04);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.7s ease;
+}
+
+.ap-cine-card:hover .ap-cine-image-panel img {
+    transform: scale(1);
+    filter: brightness(0.92) saturate(1.05);
+}
+
+/* Accent colour overlay that wipes in on hover */
+.ap-cine-image-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--card-accent, #fff);
+    opacity: 0;
+    mix-blend-mode: soft-light;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+
+.ap-cine-card:hover .ap-cine-image-panel::after {
+    opacity: 0.25;
+}
+
+
+/* ── Info Panel ── */
+.ap-cine-info-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 56px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.4s ease;
+}
+
+.darkmode .ap-cine-card:hover .ap-cine-info-panel {
+    background-color: rgba(255, 255, 255, 0.025);
+}
+
+.lightmode .ap-cine-card:hover .ap-cine-info-panel {
+    background-color: rgba(0, 0, 0, 0.018);
+}
+
+
+/* Category */
+.ap-cine-category {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--card-accent, #888);
+    font-weight: 600;
+    margin-bottom: 16px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ap-cine-category::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1.5px;
+    background: var(--card-accent, currentColor);
+    flex-shrink: 0;
+}
+
+/* Title */
+.ap-cine-title {
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+    line-height: 1.1;
+    margin: 0 0 20px;
+    letter-spacing: -0.5px;
+    font-weight: 400;
+    transition: color 0.4s ease;
+}
+
+.darkmode .ap-cine-title, 
+.darkmode .ap-cine-card:hover .ap-cine-title {
+    color: #ffffff !important;
+}
+
+.lightmode .ap-cine-title, 
+.lightmode .ap-cine-card:hover .ap-cine-title {
+    color: #000000 !important;
+}
+
+.ap-cine-card:hover {
+    color: inherit !important;
+}
+
+/* Description */
+.ap-cine-desc {
+    font-size: 13.5px;
+    line-height: 1.78;
+    color: #888;
+    margin: 0 0 24px;
+}
+
+/* Tech tags */
+.ap-cine-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.ap-cine-tag {
+    font-size: 11px;
+    padding: 5px 13px;
+    border-radius: 100px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+.darkmode .ap-cine-tag {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.lightmode .ap-cine-tag {
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.ap-cine-card:hover .ap-cine-tag {
+    background: rgba(128, 128, 128, 0.1);
+}
+
+/* CTA */
+.ap-cine-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--card-accent, inherit);
+}
+
+.ap-cine-cta-arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px solid var(--card-accent, currentColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: background 0.35s ease, transform 0.35s ease;
+}
+
+.ap-cine-card:hover .ap-cine-cta-arrow {
+    background: var(--card-accent, currentColor);
+    transform: rotate(45deg);
+}
+
+.darkmode .ap-cine-card:hover .ap-cine-cta-arrow i {
+    color: #000;
+}
+
+.lightmode .ap-cine-card:hover .ap-cine-cta-arrow i {
+    color: #fff;
+}
+
+/* ── Background Index Watermark ── */
+.ap-cine-index-watermark {
+    position: absolute;
+    bottom: -5%;
+    right: -2%;
+    font-size: clamp(5rem, 10vw, 10rem);
+    font-family: inherit;
+    font-weight: 800;
+    line-height: 0.8;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    -webkit-text-stroke: 2px transparent; /* Base state */
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                color 0.8s ease, 
+                -webkit-text-stroke-color 0.8s ease, 
+                opacity 0.8s ease;
+}
+
+/* When image is on the right, info is on the left -> watermark on the bottom left */
+.ap-cine-reverse .ap-cine-index-watermark {
+    right: auto;
+    left: -2%;
+}
+
+.darkmode .ap-cine-index-watermark {
+    color: rgba(255, 255, 255, 0.03);
+}
+
+.lightmode .ap-cine-index-watermark {
+    color: rgba(0, 0, 0, 0.04);
+}
+
+.ap-cine-card:hover .ap-cine-index-watermark {
+    transform: translateY(-8px) scale(1.05);
+    color: transparent;
+    -webkit-text-stroke-color: rgba(128, 128, 128, 0.35); /* Elegant gray display */
+    opacity: 0.8;
+}
+
+/* ── Divider line ── */
+.ap-cine-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(128, 128, 128, 0.13);
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+    .ap-cine-card,
+    .ap-cine-card.ap-cine-reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        min-height: auto;
+    }
+
+    .ap-cine-image-panel {
+        min-height: 240px;
+    }
+
+    .ap-cine-card.ap-cine-reverse .ap-cine-image-panel {
+        order: -1;
+    }
+
+    .ap-cine-info-panel {
+        padding: 36px 32px;
+    }
+
+    .ap-cine-desc {
+        max-height: 200px;
+        opacity: 1;
+        transform: none;
+    }
+
+    .ap-cine-cta {
+        opacity: 1;
+        transform: none;
+    }
+
+    .ap-cards-list {
+        padding: 40px 5% 0;
+    }
+
+    .ap-navbar {
+        padding: 0 25px;
+    }
+
+    .ap-hero {
+        padding: 120px 5% 60px;
+        min-height: 40vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .ap-cine-info-panel {
+        padding: 28px 22px;
+    }
+
+    .ap-cine-title-fixed {
+        font-size: 1.6rem;
+    }
+}
+
+/* ── ULTIMATE FIX FOR BLUE HOVER ── */
+/* This rule must be at the very bottom to win the cascade */
+.ap-cine-title-fixed,
+.ap-cine-card:hover .ap-cine-title-fixed,
+.ap-cine-card:active .ap-cine-title-fixed {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.darkmode .ap-cine-title-fixed,
+.darkmode .ap-cine-card:hover .ap-cine-title-fixed {
+    color: #ffffff !important;
+}
+
+.lightmode .ap-cine-title-fixed,
+.lightmode .ap-cine-card:hover .ap-cine-title-fixed {
+    color: #000000 !important;
+}
