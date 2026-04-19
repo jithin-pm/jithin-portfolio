@@ -111,32 +111,6 @@
 
 
 @media (max-width: 768px) {
-    .colorSwitcher {
-        bottom: 15px;
-        right: 15px;
-    }
-
-    .color-palette-ui {
-        width: 170px;
-        height: 125px;
-        margin-right: -15px;
-    }
-
-    .palette-base-icon {
-        font-size: 125px;
-    }
-
-    .palette-color-hole {
-        width: 18px;
-        height: 18px;
-    }
-
-    .palette-color-hole.ash {
-        width: 25px;
-        height: 25px;
-    }
-
-    .palette-trigger-icon {
-        font-size: 32px;
-    }
+    /* Maintained large screen size and position as per request */
+    /* Removed overrides that were reducing size and changing position */
 }
