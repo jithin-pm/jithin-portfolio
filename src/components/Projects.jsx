@@ -6,8 +6,7 @@ import IshttamImg from '../assets/ishttam.png';
 import BhakshanangalImg from '../assets/Bhakshanangal.png';
 import DavidsAcademyImg from '../assets/davidsAcademy.png';
 import ShifaClinicImg from '../assets/shifaClinic.png';
-import GlobalWebImg from '../assets/globalwebproduction.png';
-import DrInImg from '../assets/DR.IN.png';
+
 import DatsheetsImg from '../assets/datsheets.png';
 import YashfiImg from '../assets/yashfi.png';
 

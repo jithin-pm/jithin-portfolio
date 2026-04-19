@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState, useContext } from 'react';
 import { Link as ScrollLink } from 'react-scroll'; // For smooth scrolling
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -24,8 +24,7 @@ import aboutImage from './assets/jithin.jpeg';
 
 function App() {
   const { color } = useContext(ColorContext);
-  const location = useLocation();
-  const isProjectsPage = location.pathname === '/projects';
+
 
   const [showSidebar, setShowSidebar] = useState(false);
   const [showSplash, setShowSplash] = useState(true);
