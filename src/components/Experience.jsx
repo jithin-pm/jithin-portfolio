@@ -39,7 +39,7 @@ function Experience() {
                             <div className='experience-block-contents' >
                                 <h4>JUNIOR SOFTWARE ENGINEER</h4>
                                 <div className='company-info'>
-                                    <h6>NEYNDRA GLOBAL SOLUTIONS PRIVATE LTD, TRIVANDRUM</h6>
+                                    <h6>LADDER 7 NEXTSTEP SOLUTION, TRIVANDRUM</h6>
                                     <div className='year' style={{ backgroundColor: color }}>
                                         <p>FEB 2025 - JULY 2025</p>
                                     </div>

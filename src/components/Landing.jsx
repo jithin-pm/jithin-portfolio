@@ -1,42 +1,60 @@
 import React, { useContext } from 'react'
 import '../styles/landing.css'
 import { ColorContext } from '../context/ContextShare';
-import landingImage from '../assets/landingImage.png.png'
+import { Link as ScrollLink } from 'react-scroll';
 
 function Landing() {
   const { color } = useContext(ColorContext);
   return (
     <>
-
-      <div className='landing' >
-        <div className='name-role'>
-          <h1>Jithin pm</h1>
-          <h3>I'm a <span style={{ color, borderLeft: "2px color" }} className='ms-1'></span></h3>
+      <div className='landing'>
+        <div className='hero-text-container' data-aos="fade-up" data-aos-duration="1200">
+          <h1 className='hero-main-text'>
+            <span className="full-stack-wrapper">
+              <span className='hero-main-text-span'>Full Stack Developer</span> <span className="hand-emoji">✌️</span>
+            </span> I design and build fast, scalable, user—first web experiences —with clean code and modern <span style={{ color, fontStyle: 'italic' }}>design.</span>
+          </h1>
+          <p className='hero-sub-status' data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+            FULL STACK DEVELOPER @ LUNAR ENTERPRISES
+          </p>
         </div>
-        <div className='landing-image' >
-          <img src={landingImage} alt="Landing" />
+
+        <div className='marquee-group-wrapper'>
+          <div className='marquee-container' data-aos="fade-in" data-aos-duration="2000">
+            <div className='marquee-content'>
+              <span>JITHIN PM</span>
+              <span>JITHIN PM</span>
+              <span>JITHIN PM</span>
+              <span>JITHIN PM</span>
+              <span>JITHIN PM</span>
+              <span>JITHIN PM</span>
+            </div>
+          </div>
+
+          <div className='marquee-container mobile-only-marquee' data-aos="fade-in" data-aos-duration="2000">
+            <div className='marquee-content reverse'>
+              <span>JITHINPM</span>
+              <span>JITHINPM</span>
+              <span>JITHINPM</span>
+              <span>JITHINPM</span>
+              <span>JITHINPM</span>
+              <span>JITHINPM</span>
+            </div>
+          </div>
+        </div>
+
+        <div className='landing-footer-info' data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+          <div className='location'>BASED IN INDIA, KERALA</div>
+          <div className='view-all-btn-wrapper' style={{ marginTop: 0 }}>
+            <ScrollLink to="contact" smooth={true} duration={500} offset={-30} style={{ textDecoration: 'none' }}>
+              <button className="view-all-btn">
+                <span className="vab-arrow">&#8212;</span>
+                <span className="vab-text">LET'S WORK TOGETHER!</span>
+              </button>
+            </ScrollLink>
+          </div>
         </div>
       </div>
-      <div className='landing-icons' >
-        <div className='icons-left'>
-          <a href="https://wa.me/7560844748" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-whatsapp fa-xl mb-1"></i>
-          </a>
-          <a href="tel:7560844748" target="_blank" rel="noopener noreferrer">
-            <i className="fa-solid fa-phone fa-lg"></i>
-          </a>
-          <a href="mailto:jithinpm.official@gmail.com" target="_blank" rel="noopener noreferrer">
-            <i className="fa-solid fa-envelope fa-lg"></i>
-          </a>
-        </div>
-        <div className='icons-right'>
-          <a href="https://www.linkedin.com/in/jithin-pm-403241285/" ><i className="fa-brands fa-linkedin-in fa-lg" target="_blank" rel="noopener noreferrer" ></i></a>
-          <a href="https://github.com/jithin-pm" target="_blank" rel="noopener noreferrer"> <i className="fa-brands fa-github fa-lg"></i></a>
-          <a href="https://www.instagram.com/jithin.pm_/?next=%2F" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram fa-lg" ></i></a>
-          <a href="https://www.facebook.com/jithin.pm.96" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f fa-lg"></i></a>
-        </div>
-      </div>
-
     </>
   )
 }

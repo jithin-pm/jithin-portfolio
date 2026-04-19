@@ -17,12 +17,12 @@ function Projects() {
 
     const projects = [
         {
-            title: "Bhakshanangal Foods",
-            description: "An ecommerce platform for authentic Kerala delicacies. Features automated currency conversion, secure payments, and smart shipping integration, managed through a comprehensive admin dashboard.",
-            tech: "React, Node.js, Stripe, Shiprocket, Google Translate",
+            title: "Shifa Clinic",
+            description: "A comprehensive hospital management system with role-based access for Admin, Doctor, Pharmacist, Lab, and Receptionist. Features Twilio OTP for security, S-Pen compatible scribble canvas for prescriptions, and real-time patient token management.",
+            tech: "React, Node.js, MongoDB, Twilio, Canvas API",
             github: "#",
-            live: "https://bhakshanangal.com/",
-            image: BhakshanangalImg
+            live: "https://shifaclinic.lunarenterprises.co.in/",
+            image: ShifaClinicImg
         },
         {
             title: "David's Academy",
@@ -33,20 +33,20 @@ function Projects() {
             image: DavidsAcademyImg
         },
         {
-            title: "Shifa Clinic",
-            description: "A comprehensive hospital management system with role-based access for Admin, Doctor, Pharmacist, Lab, and Receptionist. Features Twilio OTP for security, S-Pen compatible scribble canvas for prescriptions, and real-time patient token management.",
-            tech: "React, Node.js, MongoDB, Twilio, Canvas API",
-            github: "#",
-            live: "https://shifaclinic.lunarenterprises.co.in/",
-            image: ShifaClinicImg
-        },
-        {
             title: "Yashfi Foundation",
             description: "A charity donation platform that enables users to contribute funds seamlessly. Yashfi Foundation allows secure online donations through Razorpay integration, ensuring a smooth and reliable giving experience.",
             tech: "React, Node.js, Razorpay, Tailwind",
             github: "#",
             live: "https://yashfifoundation.org/",
             image: YashfiImg
+        },
+        {
+            title: "Datsheets",
+            description: "An enterprise management platform for handling dynamic data sheets across multiple business operations. Features real-time multi-user collaboration via Socket.io, allowing management of inventory, product details, and pricing in a spreadsheet-style interface with instant formula-based processing.",
+            tech: "React, Node.js, Socket.io, Redux, PostgreSQL",
+            github: "#",
+            live: "https://datsheets.in/",
+            image: DatsheetsImg
         },
         {
             title: "Ishttam Marry",
@@ -57,12 +57,12 @@ function Projects() {
             image: IshttamImg
         },
         {
-            title: "Datsheets",
-            description: "An enterprise management platform for handling dynamic data sheets across multiple business operations. Features real-time multi-user collaboration via Socket.io, allowing management of inventory, product details, and pricing in a spreadsheet-style interface with instant formula-based processing.",
-            tech: "React, Node.js, Socket.io, Redux, PostgreSQL",
+            title: "Bhakshanangal Foods",
+            description: "An ecommerce platform for authentic Kerala delicacies. Features automated currency conversion, secure payments, and smart shipping integration, managed through a comprehensive admin dashboard.",
+            tech: "React, Node.js, Stripe, Shiprocket, Google Translate",
             github: "#",
-            live: "https://datsheets.in/",
-            image: DatsheetsImg
+            live: "https://bhakshanangal.com/",
+            image: BhakshanangalImg
         }
     ]
 

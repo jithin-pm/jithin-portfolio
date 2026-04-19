@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import '../styles/colorswitcher.css';
 import { ColorContext } from '../context/ContextShare';
+import { IoIosColorPalette } from 'react-icons/io';
 
 function ColorSwitcher() {
     const [show, setShow] = useState(false);
@@ -28,69 +29,25 @@ function ColorSwitcher() {
     return (
         <div className='colorSwitcher'>
             {show && (
-                <div className='color-picker'>
-                    <h6>Color Switcher</h6>
-                    <div className='colors'>
-                        <i
-                            className="fa-solid fa-droplet fa-xl"
-                            style={{ color: 'rgb(128 128 128)' }}
-                            onClick={() => handleColorChange('rgb(128 128 128)')}
-                        ></i>
-                        <i
-                            className="fa-solid fa-droplet fa-xl"
-                            style={{ color: '#c50900' }}
-                            onClick={() => handleColorChange('#c50900')}
-                        ></i>
-                        <i
-                            className="fa-solid fa-droplet fa-xl"
-                            style={{ color: 'rgb(65 105 225)' }}
-                            onClick={() => handleColorChange('rgb(65 105 225)')}
-                        ></i>
-                        <i
-                            className="fa-solid fa-droplet fa-xl"
-                            style={{ color: '#3b945e' }}
-                            onClick={() => handleColorChange('#3b945e')}
-                        ></i>
-                        <i
-                            className="fa-solid fa-droplet fa-xl"
-                            style={{ color: '#9b1750' }}
-                            onClick={() => handleColorChange('#9b1750')}
-                        ></i>
-                        <i
-                            className="fa-solid fa-droplet fa-xl"
-                            style={{ color: 'rgb(241 196 15)' }}
-                            onClick={() => handleColorChange('rgb(241 196 15)')}
-                        ></i>
-                        <i
-                            className="fa-solid fa-droplet fa-xl"
-                            style={{ color: '#e64833' }}
-                            onClick={() => handleColorChange('#e64833')}
-                        ></i>
-
-                        <i
-                            className="fa-solid fa-droplet fa-xl"
-                            style={{ color: '#4f318f' }}
-                            onClick={() => handleColorChange('#4f318f')}
-                        ></i>
-                        <i
-                            className="fa-solid fa-droplet fa-xl"
-                            style={{ color: '#1affa3' }}
-                            onClick={() => handleColorChange('#1affa3')}
-                        ></i>
-                        <i
-                            className="fa-solid fa-droplet fa-xl"
-                            style={{ color: 'rgb(238 97 146)' }}
-                            onClick={() => handleColorChange('rgb(238 97 146)')}
-                        ></i>
+                <div className='color-palette-ui'>
+                    <div className="palette-inner">
+                        <IoIosColorPalette className="palette-base-icon" />
+                        
+                        {/* Interactive Color Circles positioned over the icon's holes */}
+                        <div className="palette-color-hole red" onClick={() => handleColorChange('#c50900')}></div>
+                        <div className="palette-color-hole blue" onClick={() => handleColorChange('rgb(65 105 225)')}></div>
+                        <div className="palette-color-hole green" onClick={() => handleColorChange('#3b945e')}></div>
+                        <div className="palette-color-hole yellow" onClick={() => handleColorChange('rgb(241 196 15)')}></div>
+                        <div className="palette-color-hole ash" onClick={() => handleColorChange('rgb(128 128 128)')}></div>
                     </div>
                 </div>
             )}
-            <div className="fixed-icon" onClick={showColorPicker}>
+            <div className="fixed-icon" onClick={showColorPicker} style={{ color }}>
                 {
                     show ?
-                        <i class="fa-solid fa-xmark fa-xl mb-3" style={{ color }}></i>
+                        <i className="fa-solid fa-xmark fa-xl"></i>
                         :
-                        <i className="fa-solid fa-palette fa-2xl" style={{ color }}></i>
+                        <IoIosColorPalette className="palette-trigger-icon" />
                 }
 
             </div>

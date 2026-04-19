@@ -12,69 +12,89 @@
     /* Keep a gap from the right edge */
     transform: translateY(-50%);
     /* Adjust for perfect vertical centering */
-    z-index: 1;
+    z-index: 9999;
 }
 
-.color-picker {
-    width: 220px;
-    height: 140px;
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    margin-right: 15px;
-    /* Add margin to push the picker to the left of the icon */
+.color-palette-ui {
+    width: 210px;
+    height: 150px;
+    margin-right: -25px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     transform-origin: bottom right;
     animation: expandOpen 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.color-picker h6 {
-    color: #999;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-}
-
-/* Dark Mode Overrides */
-.darkmode .color-picker {
-    background: #1a1a1a;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    border: 1px solid #333;
-}
-
-.darkmode .color-picker h6 {
-    color: #f0f0f0;
-}
-
-.colors {
+.palette-inner {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
     justify-content: center;
-    padding-bottom: 20px;
+    transform: rotate(-15deg);
 }
 
-.colors i {
-    padding-top: 20px;
+.palette-base-icon {
+    font-size: 150px;
+    color: #e5e7eb; /* Light Grey (Tailwind gray-200 equivalent) */
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.12));
+    transition: color 0.3s ease;
+    display: block;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.darkmode .palette-base-icon {
+    color: #2a2a2a;
+}
+
+.palette-color-hole {
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+.palette-color-hole:hover {
+    transform: scale(1.2);
+    filter: brightness(1.1);
+}
+
+/* Precisely calibrated positioning with -15deg rotation */
+.palette-color-hole.red { top: 53%; left: 25%; background-color: #c50900; }
+.palette-color-hole.blue { top: 35%; left: 23%; background-color: rgb(65 105 225); }
+.palette-color-hole.green { top: 22%; left: 37%; background-color: #3b945e; }
+.palette-color-hole.yellow { top: 24%; left: 56%; background-color: rgb(241 196 15); }
+.palette-color-hole.ash { 
+    top: 59%; 
+    left: 48%; 
+    background-color: rgb(128 128 128); 
+    width: 30px; 
+    height: 30px; 
 }
 
 
 .fixed-icon {
     position: relative;
-    /* Position of the icon inside the container */
-    padding: 17px 21px 17px 17px;
+    padding: 5px;
     cursor: pointer;
 }
 
 .fixed-icon i {
     font-size: 24px;
+}
+
+.palette-trigger-icon {
+    font-size: 48px;
+    transition: transform 0.3s ease;
+}
+
+.palette-trigger-icon:hover {
+    transform: rotate(15deg);
 }
 
 @keyframes expandOpen {
@@ -96,27 +116,27 @@
         right: 15px;
     }
 
-    .color-picker {
-        max-width: 100%;
-        font-size: 0.9rem;
-        width: 180px;
+    .color-palette-ui {
+        width: 170px;
         height: 125px;
-
+        margin-right: -15px;
     }
 
-    .color-picker h6 {
-        font-size: 12px;
+    .palette-base-icon {
+        font-size: 125px;
     }
 
-    .fixed-icon {
-        padding: 6px;
+    .palette-color-hole {
+        width: 18px;
+        height: 18px;
     }
 
-    .fixed-icon i {
-        font-size: 22px;
+    .palette-color-hole.ash {
+        width: 25px;
+        height: 25px;
     }
 
-    .colors {
-        gap: 15px;
+    .palette-trigger-icon {
+        font-size: 32px;
     }
 }

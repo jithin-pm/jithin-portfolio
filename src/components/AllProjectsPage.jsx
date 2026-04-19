@@ -24,22 +24,6 @@ function AllProjectsPage({ theme, handleToggle }) {
 
     const projects = [
         {
-            title: "Bhakshanangal Foods",
-            category: "Ecommerce Platform",
-            description: "An ecommerce platform for authentic Kerala delicacies featuring automated currency conversion, secure Stripe payments, and smart Shiprocket shipping integration.",
-            tech: ["React", "Node.js", "Stripe", "Shiprocket", "Google Translate"],
-            live: "https://bhakshanangal.com/",
-            image: BhakshanangalImg
-        },
-        {
-            title: "David's Academy",
-            category: "LMS & Assessment Platform",
-            description: "A full-featured learning management and assessment system with live exams, question banks, and recorded classes. Supports 10+ question types and comprehensive student analytics.",
-            tech: ["React", "MySQL", "Node.js", "CSS"],
-            live: "https://davids-academy.com/",
-            image: DavidsAcademyImg
-        },
-        {
             title: "Shifa Clinic",
             category: "Hospital Management",
             description: "A hospital management system with role-based access for Admin, Doctor, Pharmacist, Lab & Receptionist. Features Twilio OTP, S-Pen scribble canvas, and real-time patient token management.",
@@ -48,28 +32,12 @@ function AllProjectsPage({ theme, handleToggle }) {
             image: ShifaClinicImg
         },
         {
-            title: "Global Web Production",
-            category: "Creative Agency Site",
-            description: "A UI-focused creative website showcasing responsive layouts and performance-first design principles.",
-            tech: ["React", "Tailwind"],
-            live: "https://www.globalwebproduction.com/",
-            image: GlobalWebImg
-        },
-        {
-            title: "Ishttam Marry",
-            category: "Matrimonial Platform",
-            description: "A comprehensive matrimonial platform with advanced matching algorithms, real-time chat, and connection requests. Includes a robust admin panel for user management and premium subscriptions.",
-            tech: ["React", "Node.js", "Socket.io", "MySQL", "Tailwind"],
-            live: "https://ishtammarry.com/",
-            image: IshttamImg
-        },
-        {
-            title: "DR.IN",
-            category: "E-Commerce Platform",
-            description: "A comprehensive e-commerce platform with Shiprocket logistics and Razorpay secure payments, built for seamless online retail.",
-            tech: ["React", "Node.js", "Razorpay", "Shiprocket"],
-            live: "https://drinuser.lunarenterprises.co.in/",
-            image: DrInImg
+            title: "David's Academy",
+            category: "LMS & Assessment Platform",
+            description: "A full-featured learning management and assessment system with live exams, question banks, and recorded classes. Supports 10+ question types and comprehensive student analytics.",
+            tech: ["React", "MySQL", "Node.js", "CSS"],
+            live: "https://davids-academy.com/",
+            image: DavidsAcademyImg
         },
         {
             title: "Yashfi Foundation",
@@ -86,6 +54,38 @@ function AllProjectsPage({ theme, handleToggle }) {
             tech: ["React", "Node.js", "Socket.io", "Redux", "PostgreSQL"],
             live: "https://datsheets.in/",
             image: DatsheetsImg
+        },
+        {
+            title: "Ishttam Marry",
+            category: "Matrimonial Platform",
+            description: "A comprehensive matrimonial platform with advanced matching algorithms, real-time chat, and connection requests. Includes a robust admin panel for user management and premium subscriptions.",
+            tech: ["React", "Node.js", "Socket.io", "MySQL", "Tailwind"],
+            live: "https://ishtammarry.com/",
+            image: IshttamImg
+        },
+        {
+            title: "Bhakshanangal Foods",
+            category: "Ecommerce Platform",
+            description: "An ecommerce platform for authentic Kerala delicacies featuring automated currency conversion, secure Stripe payments, and smart Shiprocket shipping integration.",
+            tech: ["React", "Node.js", "Stripe", "Shiprocket", "Google Translate"],
+            live: "https://bhakshanangal.com/",
+            image: BhakshanangalImg
+        },
+        {
+            title: "Global Web Production",
+            category: "Creative Agency Site",
+            description: "A UI-focused creative website showcasing responsive layouts and performance-first design principles.",
+            tech: ["React", "Tailwind"],
+            live: "https://www.globalwebproduction.com/",
+            image: GlobalWebImg
+        },
+        {
+            title: "DR.IN",
+            category: "E-Commerce Platform",
+            description: "A comprehensive e-commerce platform with Shiprocket logistics and Razorpay secure payments, built for seamless online retail.",
+            tech: ["React", "Node.js", "Razorpay", "Shiprocket"],
+            live: "https://drinuser.lunarenterprises.co.in/",
+            image: DrInImg
         },
         {
             title: "Dymphna",

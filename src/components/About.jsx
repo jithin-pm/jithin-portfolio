@@ -7,7 +7,8 @@ import HoverImage from './HoverImage';
 import { PiHandWaving } from "react-icons/pi";
 import { HiOutlineSparkles } from 'react-icons/hi';
 import { IoCodeSlashOutline } from 'react-icons/io5';
-import { LuPenTool } from 'react-icons/lu';
+import { LuPenTool, LuGlobe, LuFingerprint } from 'react-icons/lu';
+import { HiOutlineWrenchScrewdriver } from 'react-icons/hi2';
 
 function About() {
     const { color } = useContext(ColorContext);
@@ -26,20 +27,13 @@ function About() {
                     <div className='about-me-description' data-aos="fade-up" data-aos-duration="1200">
                         <div className="new-intro-container">
                             <h2 className="intro-text">
-                                Hi, I am <span className="name-pill" style={{ fontWeight: "bold", letterSpacing: "2px", color: color }} >Jithin pm</span> <PiHandWaving style={{ verticalAlign: 'middle' }} />,
-                                <span> a</span> <span className="role-pill" >MERN</span> Developer. I design <LuPenTool style={{ verticalAlign: 'middle' }} />
-                                <span> and build fast, scalable, user first web experiences</span> <HiOutlineSparkles style={{ verticalAlign: 'middle' }} />
-                                <span> with clean, maintainable code</span> <IoCodeSlashOutline style={{ verticalAlign: 'middle' }} />
-                                <span> and modern, impactful </span><span style={{ fontStyle: "italic", color: color }} >design</span>
-                                <span> that delivers real value.</span>
+                                Hi, I am <span className="name-pill" style={{ fontWeight: "bold", letterSpacing: "2px" }} >Jithin pm</span> <PiHandWaving style={{ verticalAlign: 'middle', color }} />,
+                                <span> a passionate</span> <span className="role-pill" >MERN</span> Developer focused on designing and developing modern web products <LuGlobe style={{ verticalAlign: 'middle', color }} />, SaaS platforms <LuFingerprint style={{ verticalAlign: 'middle', color }} />, and user-first experiences. I architect <LuPenTool style={{ verticalAlign: 'middle', color }} />
+                                <span> highly scalable solutions, ensure reliable software maintenance</span> <HiOutlineWrenchScrewdriver style={{ verticalAlign: 'middle', color }} />
+                                <span>, blending technical precision</span> <IoCodeSlashOutline style={{ verticalAlign: 'middle', color }} />
+                                <span> with creative, design-driven </span><span className="aesthetic-text" >aesthetics</span> <HiOutlineSparkles style={{ verticalAlign: 'middle', color }} />.
                             </h2>
-                            <hr />
-                            <div className='about-me-description-details' data-aos="fade-right" data-aos-duration="1600"  >
-                                <p>Name :<span>Jithin pm</span></p>
-                                <p>Email : <span>jithinpm.official@gmail.com</span> </p>
-                                <p>Age : <span>23</span></p>
-                                <p>Location : <span>Kerala ,India</span></p>
-                            </div>
+
                         </div>
 
                         <div className='btn-icons mt-5'>

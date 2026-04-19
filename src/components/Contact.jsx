@@ -157,8 +157,7 @@ function Contact() {
                             <span>Name :</span> Jithin PM
                         </p>
                         <p>
-                            <span>Location :</span> Lekshmi Bhavan, Pathanapuram, Kerala, India
-                            689695
+                            <span>Location :</span> Kerala, India
                         </p>
                         <p>
                             <span>Call Me :</span> +91 7560844748

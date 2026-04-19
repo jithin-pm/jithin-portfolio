@@ -1,249 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+
+@font-face {
+    font-family: 'MarqueeCutsFont';
+    src: url('../fonts/super-heading.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 .landing {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0%;
-    padding: 0%;
-    padding-top: 100px;
-    /* Offset for fixed header */
-    gap: 30px;
-    overflow-x: hidden;
-}
-
-/* landing text */
-.name-role {
-    font-family: "Geologica", "sans-serif";
-    width: 400px;
-}
-
-.name-role h1 {
-    font-size: 80px;
-    font-weight: 700;
     margin: 0;
-    font-family: "Shadows Into Light", serif;
-    letter-spacing: 3px;
-}
-
-.name-role span {
-    font-size: 26px;
-    font-weight: 700;
-    margin: 10px 0;
-    font-family: "Geologica";
-}
-
-.name-role h3 {
-    padding-top: 5px;
-}
-
-.name-role span {
+    padding: 100px 5% 0 5%;
+    overflow-x: hidden;
     position: relative;
+    background-color: transparent;
 }
 
-.name-role span::before {
-    content: "Web Developer";
-    animation: words 8s infinite;
+/* Hero Text Section */
+.hero-text-container {
+    text-align: center;
+    max-width: 1100px;
+    z-index: 2;
+    margin-top: auto;
+    margin-bottom: 0px;
 }
 
-.name-role span::after {
-    content: "";
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    right: -8px;
-    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+.hero-main-text {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    font-family: "Geologica", sans-serif;
+    color: inherit;
+    margin-bottom: 25px;
 }
 
-.darkmode .name-role span::after {
-    background-color: black;
-    transition: background-color 1s ease, color 0.3s ease;
+.hero-main-text span {
+    display: inline-block;
+    animation: none !important;
+    /* Re-enable shadows by removing the override, or explicitly setting them if needed */
+    /* top: 0 !important; still needed to prevent jumping if h1 span has it */
+    top: 0 !important;
 }
 
-.lightmode .name-role span::after {
-    background-color: white;
-    transition: background-color 1s ease, color 0.3s ease;
+h1.hero-main-text span,
+.lightmode h1.hero-main-text span,
+.darkmode h1.hero-main-text span {
+    font-family: inherit !important;
+    text-shadow: none !important;
+    font-size: inherit !important;
+    letter-spacing: inherit !important;
+    animation: none !important;
+    top: 0 !important;
 }
 
-/* typing effect on landing text */
+h1.hero-main-text span.hero-main-text-span,
+.lightmode h1.hero-main-text span.hero-main-text-span,
+.darkmode h1.hero-main-text span.hero-main-text-span {
+    font-family: "MarqueeCutsFont", "Saira Stencil One", sans-serif !important;
+    font-weight: 900 !important;
+    text-shadow: none !important;
+    font-size: inherit !important;
+    letter-spacing: inherit !important;
+}
 
-@keyframes cursor {
+.full-stack-wrapper {
+    cursor: default;
+}
+
+.hand-emoji {
+    display: inline-block;
+    transform-origin: bottom center;
+}
+
+h1.hero-main-text .full-stack-wrapper:hover span.hand-emoji,
+.lightmode h1.hero-main-text .full-stack-wrapper:hover span.hand-emoji,
+.darkmode h1.hero-main-text .full-stack-wrapper:hover span.hand-emoji {
+    animation: smoothWave 1.8s ease-in-out infinite !important;
+}
+
+@keyframes smoothWave {
+    0% { transform: scale(1) rotate(0deg); }
+    20% { transform: scale(1.15) rotate(15deg); }
+    50% { transform: scale(1.15) rotate(-10deg); }
+    80% { transform: scale(1.15) rotate(15deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+.hero-sub-status {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+    margin-top: 15px;
+    font-family: "Geologica", sans-serif;
+}
+
+/* Marquee Section */
+.marquee-container {
+    width: 100vw;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding: 0;
+    margin: -15px 0 20px 0;
+    background-color: transparent;
+    user-select: none;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: scroll 60s linear infinite;
+    padding-left: 0;
+}
+
+.marquee-content span {
+    font-size: clamp(5rem, 20vw, 15rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0 40px;
+    font-family: "MarqueeCutsFont", "Saira Stencil One", sans-serif;
+    color: inherit;
+    line-height: 1.1;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
     to {
-        border-left: 2px solid #ff7f5000;
+        transform: translateX(-50%);
     }
 }
 
-@keyframes words {
-
-    0%,
-    50% {
-        content: "Web Developer";
+@keyframes scroll-reverse {
+    from {
+        transform: translateX(-50%);
     }
-
-    51%,
-    100% {
-        content: "Software Developer";
+    to {
+        transform: translateX(0);
     }
 }
 
-@keyframes typing {
+.marquee-content.reverse {
+    animation: scroll-reverse 60s linear infinite;
+}
 
-    10%,
-    15%,
-    30%,
-    35%,
-    50%,
-    55%,
-    70%,
-    75%,
-    90%,
-    95% {
-        width: 0;
-    }
-
-    5%,
-    20%,
-    25%,
-    40%,
-    45%,
-    60%,
-    65%,
-    80%,
-    85% {
-        width: calc(100% + 8px);
-    }
+.mobile-only-marquee {
+    display: none;
 }
 
 
-/* landing image */
-
-.landing-image img {
-    max-width: 470px;
+/* Landing Footer Section */
+.landing-footer-info {
     width: 100%;
-    height: auto;
-    border-radius: 30%;
-}
-
-/* landing icon section */
-
-.landing-icons {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
-    margin-top: -190px;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.icons-left {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 15px;
-    justify-content: flex-end;
+    padding: 40px 0;
+    margin-top: auto;
+    font-family: "Geologica", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 2;
 }
 
-.icons-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    justify-content: flex-end;
-
+.location {
+    text-transform: uppercase;
 }
 
-/* icons color according to current theme */
-
-.lightmode .landing-icons a {
-    color: black;
+.work-together-btn a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
 }
 
-.darkmode .landing-icons a {
-    color: white;
+.work-together-btn a:hover {
+    opacity: 0.7;
 }
 
-.landing-icons a:hover {
-    color: rgb(159 159 159);
+/* Theme specific overrides */
+.lightmode .hero-sub-status {
+    color: #666;
 }
 
+.darkmode .hero-sub-status {
+    color: #999;
+}
 
+/* Responsive adjustments */
 @media (max-width: 1024px) {
-    .landing-image img {
-        width: 350px;
-    }
-
-    .name-role h1 {
-        font-size: 55px;
-    }
-
-    .name-role span {
-        font-size: 24px;
-    }
-
-    .landing-icons {
-        margin-top: -150px;
+    .hero-main-text {
+        font-size: clamp(1.8rem, 6vw, 3.5rem);
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .landing {
-        display: flex;
+        padding-top: 80px;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+
+    .marquee-group-wrapper {
+        margin-top: 90px; /* Push it lower to visually center between top and bottom */
+    }
+
+    .hero-main-text {
+        font-size: 1.7rem;
+        padding: 0 10px;
+    }
+
+    .hero-main-text span {
+        font-size: 2rem !important;
+    }
+
+
+    .marquee-content span {
+        font-size: 18vw;
+        padding: 0 20px;
+    }
+
+    .mobile-only-marquee {
+        display: block;
+        margin-top: -50px;
+    }
+
+    .landing-footer-info {
         flex-direction: column;
         gap: 20px;
-        align-items: center;
-        justify-content: center;
-        margin-top: -70px;
-        margin-bottom: 0px;
+        margin-top: 20px;
+        padding-bottom: 50px;
     }
-
-    .landing .landing-image {
-        order: 1;
-    }
-
-    .landing .name-role {
-        order: 2;
-    }
-
-    .landing img {
-        width: 300px;
-    }
-
-    .name-role h1 {
-        font-size: 38px;
-        font-weight: 700;
-        margin: 0;
-    }
-
-    .landing h3 {
-        font-size: 19px;
-        font-weight: 550;
-    }
-
-    .name-role {
-        width: 250px;
-    }
-
-    .name-role span {
-        font-size: 19px;
-        font-weight: 550;
-        margin: 10px 0;
-
-    }
-
-    .landing-icons {
-        padding: 20px;
-        margin-top: -180px;
-        margin-bottom: 50px;
-    }
-
-    .landing-icons i {
-        font-size: 18px;
-    }
-
-    .icons-left {
-        gap: 10px;
-    }
-
-    .icons-right {
-        gap: 10px;
+    
+    .hero-sub-status {
+        font-size: 12px;
     }
 }
