@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 export const ColorContext = createContext();
 
 function ContextShare({ children }) { // Use "children" instead of "Children"
-  const [color, setColor] = useState('#4f318f');
+  const [color, setColor] = useState('#c50900');
 
   return (
     <>

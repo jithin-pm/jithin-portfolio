@@ -1,9 +1,8 @@
 import React, { useContext } from 'react'
 import '../styles/about.css'
 import { ColorContext } from '../context/ContextShare';
-import about from '../assets/jithin.jpeg'
-import aboutHover from '../assets/jithin-hover.png'
-import HoverImage from './HoverImage';
+import FloatingSkills from './FloatingSkills';
+
 import { PiHandWaving } from "react-icons/pi";
 import { HiOutlineSparkles } from 'react-icons/hi';
 import { IoCodeSlashOutline } from 'react-icons/io5';
@@ -20,9 +19,6 @@ function About() {
                     <h1>ABOUT ME</h1>
                 </div>
                 <div className='about-me'>
-                    <div className='about-me-img' data-aos="fade-down" data-aos-duration="1200" >
-                        <HoverImage baseSrc={about} hoverSrc={aboutHover} alt="Jithin PM" />
-                    </div>
 
                     <div className='about-me-description' data-aos="fade-up" data-aos-duration="1200">
                         <div className="new-intro-container">
@@ -36,20 +32,10 @@ function About() {
 
                         </div>
 
-                        <div className='btn-icons mt-5'>
-                            <a className='about-btn' href="/Jithinpm_Resume.pdf" download="Jithinpm_Resume.pdf">
-                                <button className='' style={{ backgroundColor: color }}>Download CV</button></a>
-                            <div className='icons' >
-                                <a href="https://www.linkedin.com/in/jithin-pm-403241285/" target="_blank" rel="noopener noreferrer" ><i className="fa-brands fa-linkedin-in fa-xl"></i></a>
-                                <a href="https://github.com/jithin-pm" target="_blank" rel="noopener noreferrer" ><i className="fa-brands fa-github fa-xl"></i></a>
-                                <a href="https://www.instagram.com/jithin.pm_/?next=%2F" target="_blank" rel="noopener noreferrer" ><i className="fa-brands fa-instagram fa-xl"></i></a>
-                                <a href="https://wa.me/7560844748" target="_blank" rel="noopener noreferrer" ><i className="fa-brands fa-whatsapp fa-xl"></i></a>
-                                <a href="https://www.facebook.com/jithin.pm.96" target="_blank" rel="noopener noreferrer" ><i className="fa-brands fa-facebook-f fa-xl"></i></a>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
+                <FloatingSkills />
             </div>
         </>
     )

@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import '../styles/projects.css'
 import { ColorContext } from '../context/ContextShare';
 import IshttamImg from '../assets/ishttam.png';
-import BhakshanangalImg from '../assets/Bhakshanangal.png';
 import DavidsAcademyImg from '../assets/davidsAcademy.png';
 import ShifaClinicImg from '../assets/shifaClinic.png';
+import MedHealthInvestImg from '../assets/medhealthinvest.png';
 
 import DatsheetsImg from '../assets/datsheets.png';
 import YashfiImg from '../assets/yashfi.png';
@@ -20,7 +20,7 @@ function Projects() {
             description: "A comprehensive hospital management system with role-based access for Admin, Doctor, Pharmacist, Lab, and Receptionist. Features Twilio OTP for security, S-Pen compatible scribble canvas for prescriptions, and real-time patient token management.",
             tech: "React, Node.js, MongoDB, Twilio, Canvas API",
             github: "#",
-            live: "https://shifaclinic.lunarenterprises.co.in/",
+            live: "https://shifclkmr.in/",
             image: ShifaClinicImg
         },
         {
@@ -30,6 +30,14 @@ function Projects() {
             github: "#",
             live: "https://davids-academy.com/",
             image: DavidsAcademyImg
+        },
+        {
+            title: "MedHealth Invest",
+            description: "An investment platform that allows users to invest in projects with integrated payment management. Features Razorpay as the payment gateway and Cashfree Secure ID for PAN and bank account verification.",
+            tech: "React, Node.js, MongoDB, Razorpay, Cashfree",
+            github: "#",
+            live: "https://medhealthinvest.com/",
+            image: MedHealthInvestImg
         },
         {
             title: "Yashfi Foundation",
@@ -54,14 +62,6 @@ function Projects() {
             github: "#",
             live: "https://ishtammarry.com/",
             image: IshttamImg
-        },
-        {
-            title: "Bhakshanangal Foods",
-            description: "An ecommerce platform for authentic Kerala delicacies. Features automated currency conversion, secure payments, and smart shipping integration, managed through a comprehensive admin dashboard.",
-            tech: "React, Node.js, Stripe, Shiprocket, Google Translate",
-            github: "#",
-            live: "https://bhakshanangal.com/",
-            image: BhakshanangalImg
         }
     ]
 

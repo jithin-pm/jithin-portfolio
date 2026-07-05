@@ -7,6 +7,7 @@ import IshttamImg from '../assets/ishttam.png'
 import BhakshanangalImg from '../assets/Bhakshanangal.png'
 import DavidsAcademyImg from '../assets/davidsAcademy.png'
 import ShifaClinicImg from '../assets/shifaClinic.png'
+import MedHealthInvestImg from '../assets/medhealthinvest.png'
 import GlobalWebImg from '../assets/globalwebproduction.png'
 import DrInImg from '../assets/DR.IN.png'
 import DatsheetsImg from '../assets/datsheets.png'
@@ -28,7 +29,7 @@ function AllProjectsPage({ theme, handleToggle }) {
             category: "Hospital Management",
             description: "A hospital management system with role-based access for Admin, Doctor, Pharmacist, Lab & Receptionist. Features Twilio OTP, S-Pen scribble canvas, and real-time patient token management.",
             tech: ["React", "Node.js", "MongoDB", "Twilio", "Canvas API"],
-            live: "https://shifaclinic.lunarenterprises.co.in/",
+            live: "https://shifclkmr.in/",
             image: ShifaClinicImg
         },
         {
@@ -38,6 +39,14 @@ function AllProjectsPage({ theme, handleToggle }) {
             tech: ["React", "MySQL", "Node.js", "CSS"],
             live: "https://davids-academy.com/",
             image: DavidsAcademyImg
+        },
+        {
+            title: "MedHealth Invest",
+            category: "Investment Platform",
+            description: "An investment platform that allows users to invest in projects with integrated payment management. Features Razorpay as the payment gateway and Cashfree Secure ID for PAN and bank account verification.",
+            tech: ["React", "Node.js", "MongoDB", "Razorpay", "Cashfree"],
+            live: "https://medhealthinvest.com/",
+            image: MedHealthInvestImg
         },
         {
             title: "Yashfi Foundation",

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 /* about-me text section */
 .about {
     padding-bottom: 50px;
@@ -27,7 +29,7 @@
 .about-me {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 80px;
     margin: 0 auto;
     padding-top: 40px;
@@ -48,8 +50,10 @@
 /* about-me description section */
 
 .about-me-description {
-    font-family: "Geologica", "sans-serif";
-    width: 80%;
+    font-family: "Geologica", sans-serif;
+    font-optical-sizing: auto;
+    width: 100%;
+    text-align: left;
 }
 
 .about-me-description h2 {
@@ -105,9 +109,12 @@
 }
 
 .about-me-description .intro-text {
-    font-size: 33px;
+    font-family: "Geologica", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 45px;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.6;
+    letter-spacing: -0.5px;
     color: #333;
     margin-bottom: 32px;
 }
@@ -132,7 +139,7 @@
 }
 
 .name-pill {
-    font-size: 39px;
+    font-size: 48px;
     font-family: "Shadows Into Light", serif;
     display: inline-block;
     vertical-align: middle;
@@ -140,7 +147,7 @@
 }
 
 .aesthetic-text {
-    font-size: 39px;
+    font-size: 48px;
     font-family: "Shadows Into Light", serif;
     font-weight: bold;
     letter-spacing: 2px;
@@ -149,9 +156,9 @@
 
 .role-pill {
     border: 2px solid #ccc;
-    padding: 2px 15px;
+    padding: 2px 18px;
     border-radius: 50px;
-    font-size: 23px;
+    font-size: 28px;
     font-weight: 300;
     margin: 0 5px;
     display: inline-block;
@@ -223,11 +230,11 @@
 @media (max-width: 1024px) {
 
     .intro-text {
-        font-size: 32px;
+        font-size: 37px;
     }
 
     .name-pill, .aesthetic-text {
-        font-size: 29px;
+        font-size: 38px;
         padding: 2px 0;
     }
 
@@ -245,11 +252,11 @@
     }
 
     .about-me-description .intro-text {
-        font-size: 27px;
+        font-size: 37px;
     }
 
     .role-pill {
-        font-size: 19px;
+        font-size: 24px;
     }
 
     .text-container h1 {
@@ -266,9 +273,10 @@
 
     .about-me {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         gap: 20px;
         padding-top: 50px;
+        width: 90%;
     }
 
     .about-me-img .hover-image-container {
@@ -287,7 +295,7 @@
     }
 
     .about-me-description {
-        width: 95%;
+        width: 100%;
         /* Match description width to screen size */
         text-align: left;
     }
@@ -336,5 +344,17 @@
 
     .about-me-description {
         width: 100%;
+    }
+
+    .about-me-description .intro-text, .intro-text {
+        font-size: 31px;
+    }
+
+    .name-pill, .aesthetic-text {
+        font-size: 32px;
+    }
+
+    .role-pill {
+        font-size: 20px;
     }
 }
