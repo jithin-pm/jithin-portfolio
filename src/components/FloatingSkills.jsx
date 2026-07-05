@@ -164,7 +164,6 @@ function FloatingSkills() {
             const slots = calculateGridSlots(canvasWidth);
 
             const bodies = SKILLS_DATA.map((_, i) => {
-                const el = pillsRef.current[i];
                 const slot = slots[i] || { x: 10, y: 10, w: 145, h: 50, angle: SKILLS_DATA[i].isDiamond ? 45 : 0 };
 
                 return {
