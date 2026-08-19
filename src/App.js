@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing';
 import About from './components/About';
 import Experience from './components/Experience';
+import Vision from './components/Vision';
 import Aos from 'aos';
 
 import Services from './components/Services';
@@ -235,6 +236,7 @@ function App() {
                 <div id="about">
                   <About />
                 </div>
+                <Vision />
                 <div id="experience">
                   <Experience />
                 </div>

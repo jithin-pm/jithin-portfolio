@@ -1,0 +1,73 @@
+.zoom-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #000;
+  contain: paint;
+}
+
+.zoom-video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.6; /* Slight dimming so text is readable */
+}
+
+.zoom-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.8) 90%);
+  z-index: 1;
+}
+
+.zoom-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.zoom-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 8vw;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+}
+
+.zoom-text .highlight {
+  font-style: italic;
+  font-weight: 900;
+  color: #fec52d; /* Yellowtooths amber */
+}
+
+/* Light mode specific adjustments if needed */
+.lightmode .zoom-section {
+  background-color: #fff;
+}
+
+.lightmode .zoom-text {
+  color: #fff; /* Keep text white because the video background stays dark, or change if needed */
+}
+
+@media (max-width: 768px) {
+  .zoom-text {
+    font-size: 12vw;
+  }
+}
