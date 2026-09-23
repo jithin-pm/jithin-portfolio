@@ -7,13 +7,7 @@
     text-align: center;
 }
 
-.lightmode .cta-section {
-    background-color: #f5f5f7;
-}
 
-.darkmode .cta-section {
-    background-color: #0a0a0a;
-}
 
 .cta-heading {
     font-family: "MarqueeCutsFont", "Saira Stencil One", sans-serif;

@@ -9,8 +9,7 @@ function Education() {
         <>
             <div className='education'>
                 <div className="education-title" data-aos="fade-up" data-aos-duration="1400" >
-                    <p>From Campus to Code</p>
-                    <h2>EDUCATION</h2>
+                    <h2 style={{ fontFamily: '"Unbounded", sans-serif', fontOpticalSizing: 'auto', fontWeight: 500, fontStyle: 'normal', fontSize: 'clamp(2.3rem, 6vw, 3.5rem)', lineHeight: 0.97 }}>Education</h2>
                 </div>
                 <div className='education-block-section' >
                     <div className='education-block-main' data-aos="fade-right" data-aos-duration="1400" style={{ "--hover-color": color }}>

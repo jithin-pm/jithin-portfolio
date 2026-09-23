@@ -69,8 +69,7 @@ function Projects() {
         <>
             <div className="projects">
                 <div className='projects-heading' data-aos="fade-up" data-aos-duration="1800" >
-                    <p>Some of my recent works</p>
-                    <h2>PROJECTS</h2>
+                    <h2 style={{ fontFamily: '"Unbounded", sans-serif', fontOpticalSizing: 'auto', fontWeight: 500, fontStyle: 'normal', fontSize: 'clamp(2.3rem, 6vw, 3.5rem)', lineHeight: 0.97 }}>Selected Works</h2>
                 </div>
 
                 <div className='projects-block-main'>
@@ -120,8 +119,14 @@ function Projects() {
                         style={{ '--btn-color': color }}
                         onClick={() => navigate('/projects')}
                     >
-                        <span className="vab-arrow">&#8212;</span>
-                        <span className="vab-text">VIEW ALL PROJECTS!</span>
+                        <span className="vab-text">View all projects</span>
+                        <span className="vab-arrow">
+                            <svg width="24" height="24" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.0879 12.4941L3.92134 12.4941" stroke="currentColor" strokeWidth="2" strokeLinecap="square"></path>
+                                <path d="M13.4863 20.0911C13.4863 16.1888 16.9231 12.5002 21.0772 12.5002" stroke="currentColor" strokeWidth="2" strokeLinecap="square"></path>
+                                <path d="M13.4932 4.90935C13.4932 8.81171 16.9299 12.5002 21.0841 12.5002" stroke="currentColor" strokeWidth="2" strokeLinecap="square"></path>
+                            </svg>
+                        </span>
                     </button>
                 </div>
             </div>

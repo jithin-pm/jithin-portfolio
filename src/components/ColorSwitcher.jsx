@@ -35,9 +35,9 @@ function ColorSwitcher() {
                         
                         {/* Interactive Color Circles positioned over the icon's holes */}
                         <div className="palette-color-hole red" onClick={() => handleColorChange('#c50900')}></div>
-                        <div className="palette-color-hole blue" onClick={() => handleColorChange('rgb(65 105 225)')}></div>
-                        <div className="palette-color-hole green" onClick={() => handleColorChange('#3b945e')}></div>
-                        <div className="palette-color-hole yellow" onClick={() => handleColorChange('rgb(241 196 15)')}></div>
+                        <div className="palette-color-hole blue" onClick={() => handleColorChange('#6a27df')}></div>
+                        <div className="palette-color-hole green" onClick={() => handleColorChange('#08a096')}></div>
+                        <div className="palette-color-hole yellow" onClick={() => handleColorChange('#ff4d6d')}></div>
                         <div className="palette-color-hole ash" onClick={() => handleColorChange('rgb(128 128 128)')}></div>
                     </div>
                 </div>

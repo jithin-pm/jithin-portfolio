@@ -34,12 +34,10 @@ function Skill() {
         <>
             <div className="skills-main">
                 <div className="skills-heading" data-aos="fade-up" data-aos-duration="1400" >
-                    <p>Services I offer to my clients</p>
-                    <h2>MY SKILLS</h2>
+                    <h2 style={{ fontFamily: '"Unbounded", sans-serif', fontOpticalSizing: 'auto', fontWeight: 500, fontStyle: 'normal', fontSize: 'clamp(2.3rem, 6vw, 3.5rem)', lineHeight: 0.97 }}>My Skills</h2>
                 </div>
                 <div className='tech-specialization-heading' data-aos="fade-down" data-aos-duration="1400" >
-                    <p>Areas of Expertise and Skills</p>
-                    <h2>Tech Specialization</h2>
+                    <h2 style={{ fontFamily: '"Unbounded", sans-serif', fontOpticalSizing: 'auto', fontWeight: 500, fontStyle: 'normal', fontSize: 'clamp(2.3rem, 6vw, 3.5rem)', lineHeight: 0.97 }}>Tech Specialization</h2>
                 </div>
                 <div className='tech-specialization' >
                     <div className="box-block" data-aos="fade-up" data-aos-duration="1400" >
@@ -89,8 +87,7 @@ function Skill() {
 
                 </div>
                 <div className='development-tools-heading' data-aos="fade-down" data-aos-duration="1400" >
-                    <p>Frameworks, Libraries, and Technologies I Use</p>
-                    <h2>Development Tools</h2>
+                    <h2 style={{ fontFamily: '"Unbounded", sans-serif', fontOpticalSizing: 'auto', fontWeight: 500, fontStyle: 'normal', fontSize: 'clamp(2.3rem, 6vw, 3.5rem)', lineHeight: 0.97 }}>Development Tools</h2>
                 </div>
                 <div className="development-tools">
                     <div className='circle-block' data-aos="fade-up" data-aos-duration="1400">

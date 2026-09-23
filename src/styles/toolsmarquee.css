@@ -1,0 +1,82 @@
+.tools-marquee-section {
+  padding: 20px 0;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.tools-marquee-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tools-marquee-header h2 {
+  font-family: "Unbounded", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #111;
+}
+
+.darkmode .tools-marquee-header h2 {
+  color: #eee;
+}
+
+.tools-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 40px 0;
+  border-top: 1px solid rgba(0,0,0,0.09);
+  border-bottom: 1px solid rgba(0,0,0,0.09);
+  /* Add subtle fading edges for a seamless look */
+  -webkit-mask-image: linear-gradient(to right, transparent 10%, black 30%, black 70%, transparent 90%);
+  mask-image: linear-gradient(to right, transparent 10%, black 30%, black 70%, transparent 90%);
+}
+
+.darkmode .tools-marquee-container {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.tools-marquee-content {
+  display: inline-flex;
+  gap: 120px; /* Large spacing exactly like the reference */
+  padding-left: 120px; /* Must match gap */
+  animation: scroll-marquee 20s linear infinite; /* Increased scroll speed */
+}
+
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
+
+.tools-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: default;
+}
+
+.tools-marquee-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111; /* Monochrome flat design */
+}
+
+.darkmode .tools-marquee-icon {
+  color: #eee; /* Light in dark mode */
+}
+
+@media (max-width: 768px) {
+  .tools-marquee-header h2 {
+    font-size: 28px;
+  }
+  .tools-marquee-content {
+    gap: 70px;
+    padding-left: 70px;
+    animation: scroll-marquee 12s linear infinite; /* Faster scroll on mobile */
+  }
+}

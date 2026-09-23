@@ -11,6 +11,7 @@ import Aos from 'aos';
 
 import Services from './components/Services';
 import Projects from './components/Projects';
+import ToolsMarquee from './components/ToolsMarquee';
 
 import Contact from './components/Contact';
 import { ToastContainer, Zoom } from 'react-toastify';
@@ -195,16 +196,16 @@ function App() {
                     <ScrollLink onClick={() => setShowSidebar(false)} to="landing" smooth={true} duration={500}>
                       <h6 className="nav-link-text">HOME</h6>
                     </ScrollLink>
-                    <ScrollLink onClick={() => setShowSidebar(false)} to="about" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -55 : -50}>
+                    <ScrollLink onClick={() => setShowSidebar(false)} to="about" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -80 : -60}>
                       <h6 className="nav-link-text">ABOUT</h6>
                     </ScrollLink>
-                    <ScrollLink onClick={() => setShowSidebar(false)} to="services" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -5 : -25}>
+                    <ScrollLink onClick={() => setShowSidebar(false)} to="services" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -30 : -50}>
                       <h6 className="nav-link-text">SERVICES</h6>
                     </ScrollLink>
-                    <ScrollLink onClick={() => setShowSidebar(false)} to="projects" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -5 : 0}>
+                    <ScrollLink onClick={() => setShowSidebar(false)} to="projects" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -20 : -30}>
                       <h6 className="nav-link-text">WORKS</h6>
                     </ScrollLink>
-                    <ScrollLink onClick={() => setShowSidebar(false)} to="contact" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -25 : -30}>
+                    <ScrollLink onClick={() => setShowSidebar(false)} to="contact" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -40 : -10}>
                       <h6 className="nav-link-text">CONTACT</h6>
                     </ScrollLink>
 
@@ -236,6 +237,7 @@ function App() {
                 <div id="about">
                   <About />
                 </div>
+                
                 <Vision />
                 <div id="experience">
                   <Experience />
@@ -244,6 +246,7 @@ function App() {
                 <div id="services">
                   <Services />
                 </div>
+                <ToolsMarquee />
                 <div id="projects">
                   <Projects />
                 </div>

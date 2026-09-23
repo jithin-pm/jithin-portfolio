@@ -15,8 +15,8 @@ function About() {
         <>
             <div className="about">
                 <div className='text-container' data-aos="zoom-in" data-aos-duration="1600" >
-                    <h5 style={{ color }} >Know more</h5>
-                    <h1>ABOUT ME</h1>
+                    <h5 style={{ color, fontFamily: '"Unbounded", sans-serif', marginBottom: 0, paddingBottom: 0 }} >Know more</h5>
+                    <h2 style={{ fontFamily: '"Unbounded", sans-serif', fontOpticalSizing: 'auto', fontWeight: 500, fontStyle: 'normal', fontSize: 'clamp(2.3rem, 6vw, 3.5rem)', lineHeight: 0.97 }}>About Me</h2>
                 </div>
                 <div className='about-me'>
 
