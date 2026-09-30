@@ -360,4 +360,20 @@
     transform: translateX(5px);
 }
 
-
+@media (max-width: 768px) {
+    .projects {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 50px;
+        padding-bottom: 80px;
+    }
+
+    .projects-heading {
+        width: 100%;
+    }
+
+    .projects-block-main {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+}
