@@ -1,6 +1,6 @@
 /* ── Contact Section ── */
 .contacts {
-  padding: 100px 0 120px;
+  padding: 100px 0 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@
   height: 100%;
   z-index: 0;
   background-image: url('../assets/sunburst.png');
-  background-size: 75% auto;
+  background-size: 65% auto;
   background-position: center bottom;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -301,8 +301,15 @@
 
 /* ── Responsive ── */
 @media (max-width: 767px) {
+  .shutter-wrapper {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-top: 70px; /* Clear the header */
+    box-sizing: border-box;
+  }
+
   .contacts {
-    padding: 70px 20px 60px;
+    padding: 20px 20px 40px;
   }
 
   .contact-bg-image {
@@ -310,21 +317,35 @@
   }
 
   .contacts-heading {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
   }
 
   .contacts-heading h2 {
-    font-size: 28px;
+    font-size: 26px;
+    margin-top: -10px;
   }
 
   .contacts-heading p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .contacts-section {
     flex-direction: column;
     width: 100%;
-    gap: 50px;
+    gap: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 0 8px;
+  }
+
+  .form-group textarea {
+    min-height: 50px;
   }
 
   .name-email {
@@ -337,10 +358,31 @@
   }
 
   .contact-info-desc {
+    display: none;
+  }
+
+  .contact-info h5 {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .contact-info-items {
+    gap: 12px;
+  }
+
+  .contact-info-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .contact-info-item-value {
     font-size: 13px;
   }
 
   .contact-socials {
     justify-content: flex-start;
+    margin-top: 25px;
+    gap: 10px;
   }
 }

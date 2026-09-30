@@ -1,20 +1,51 @@
 .cta-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 120px 40px;
-    text-align: center;
+    padding: 140px 60px;
+    transition: background-color 0.4s ease;
 }
 
+.lightmode .cta-section {
+    background-color: #e5e5e5;
+    /* slightly darker light neutral gray */
+}
 
+.darkmode .cta-section {
+    background-color: #1c1c1c;
+    /* lighter dark gray */
+}
+
+.cta-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 80px;
+}
+
+.cta-left {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.cta-subheading {
+    font-family: "Geologica", sans-serif;
+    font-size: 16px;
+    color: rgb(150, 150, 150);
+    margin-bottom: 10px;
+    margin-top: 0;
+}
 
 .cta-heading {
-    font-family: "MarqueeCutsFont", "Saira Stencil One", sans-serif;
-    font-size: 76px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 80px;
+    margin-top: 0;
+    letter-spacing: -2px;
 }
 
 .lightmode .cta-heading {
@@ -25,31 +56,87 @@
     color: #fff;
 }
 
-.cta-contact-label {
+.cta-availability {
+    font-family: "Geologica", sans-serif;
+    font-size: 18px;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cta-right {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 45px;
+    text-align: right;
+}
+
+.cta-description {
     font-family: "Geologica", sans-serif;
     font-size: 16px;
-    color: rgb(162, 162, 162);
-    margin-bottom: 8px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    color: rgb(150, 150, 150);
+    line-height: 1.6;
+    text-align: right;
+    margin: 0;
 }
 
-.cta-email {
-    font-family: "Geologica", sans-serif;
-    font-size: 20px;
-    font-weight: 600;
+.cta-contact-link {
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
     text-decoration: none;
-    transition: color 0.3s ease;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 40px;
+    transition: opacity 0.3s ease;
 }
 
-.lightmode .cta-email {
-    color: #111;
+.cta-contact-link:hover {
+    opacity: 0.7;
 }
 
-.darkmode .cta-email {
-    color: #fff;
-}
+@media (max-width: 1024px) {
+    .cta-container {
+        flex-direction: column;
+        gap: 50px;
+    }
 
-.cta-email:hover {
-    color: var(--cta-hover-color);
+    .cta-right {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .cta-description {
+        text-align: left;
+    }
+
+    .cta-contact-link {
+        align-self: flex-start;
+    }
+
+    .cta-button-container {
+        align-items: flex-start !important;
+    }
+
+    .cta-arrow {
+        margin-right: 0 !important;
+        margin-left: 20px !important;
+        margin-bottom: 25px !important;
+        transform: scaleX(1) rotate(20deg) !important;
+    }
+
+    .cta-heading {
+        font-size: 56px;
+        margin-bottom: 40px;
+    }
+
+    .cta-section {
+        padding: 100px 40px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -58,10 +145,37 @@
     }
 
     .cta-heading {
-        font-size: 34px;
+        font-size: 42px;
     }
 
-    .cta-email {
-        font-size: 17px;
+    .cta-subheading,
+    .cta-availability,
+    .cta-description {
+        font-size: 15px;
+    }
+
+    .cta-contact-link {
+        font-size: 18px;
+    }
+}
+
+/* Sparkle Star */
+.cta-sparkle-star {
+    filter: url(#cta-motion-blur);
+    opacity: 0.12;
+}
+
+.cta-sunburst {
+    animation: spinStar 25s linear infinite reverse;
+    transform-origin: center;
+    opacity: 0.95;
+}
+
+@keyframes spinStar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }

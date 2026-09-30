@@ -68,8 +68,14 @@ function Projects() {
     return (
         <>
             <div className="projects">
-                <div className='projects-heading' data-aos="fade-up" data-aos-duration="1800" >
-                    <h2 style={{ fontFamily: '"Unbounded", sans-serif', fontOpticalSizing: 'auto', fontWeight: 500, fontStyle: 'normal', fontSize: 'clamp(2.3rem, 6vw, 3.5rem)', lineHeight: 0.97 }}>Selected Works</h2>
+                <div className='projects-heading' data-aos="fade-up" data-aos-duration="1800">
+                    <p className='projects-subtitle'>Selected Works</p>
+                    <div className='projects-heading-content'>
+                        <h2 className='projects-title'>
+                            Selected <span style={{ color: color }}>projects,</span> designed <br />
+                            to solve real problems.
+                        </h2>
+                    </div>
                 </div>
 
                 <div className='projects-block-main'>

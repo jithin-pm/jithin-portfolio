@@ -10,7 +10,7 @@ function Services() {
 
             <div className="services">
                 <div className='services-heading' data-aos="fade-up" data-aos-duration="1800" >
-                    <h2 style={{ fontFamily: '"Unbounded", sans-serif', fontOpticalSizing: 'auto', fontWeight: 500, fontStyle: 'normal', fontSize: 'clamp(2.3rem, 6vw, 3.5rem)', lineHeight: 0.97 }}>My Services</h2>
+                    <h2 style={{ fontFamily: '"Unbounded", sans-serif', fontOpticalSizing: 'auto', fontWeight: 500, fontStyle: 'normal', fontSize: 'clamp(1.4rem, 3vw, 2.2rem)', lineHeight: 0.97 }}>My Services</h2>
                 </div>
 
                 <div className='services-block-main'  >

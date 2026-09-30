@@ -183,8 +183,8 @@ function FloatingSkills() {
             bodiesRef.current = bodies;
 
             const lastSlot = slots[slots.length - 1];
-            if (lastSlot && lastSlot.y + 90 > canvasHeight) {
-                canvas.style.height = `${lastSlot.y + 90}px`;
+            if (lastSlot && lastSlot.y + 160 > canvasHeight) {
+                canvas.style.height = `${lastSlot.y + 160}px`;
             }
         };
 
@@ -374,12 +374,18 @@ function FloatingSkills() {
                 body.vy *= 0.986;
                 body.vAngle *= 0.96;
 
-                const maxX = curWidth - body.w;
-                const maxY = curHeight - body.h;
+                const radian = body.angle * Math.PI / 180;
+                const visualW = Math.abs(body.w * Math.cos(radian)) + Math.abs(body.h * Math.sin(radian));
+                const visualH = Math.abs(body.w * Math.sin(radian)) + Math.abs(body.h * Math.cos(radian));
+                
+                const minX = (visualW - body.w) / 2;
+                const maxX = curWidth - body.w - (visualW - body.w) / 2;
+                const minY = (visualH - body.h) / 2;
+                const maxY = curHeight - body.h - (visualH - body.h) / 2;
 
-                if (body.x < 0) { body.x = 0; body.vx = Math.abs(body.vx) * 0.75; body.vAngle *= -0.5; }
+                if (body.x < minX) { body.x = minX; body.vx = Math.abs(body.vx) * 0.75; body.vAngle *= -0.5; }
                 if (body.x > maxX) { body.x = maxX; body.vx = -Math.abs(body.vx) * 0.75; body.vAngle *= -0.5; }
-                if (body.y < 0) { body.y = 0; body.vy = Math.abs(body.vy) * 0.75; body.vAngle *= -0.5; }
+                if (body.y < minY) { body.y = minY; body.vy = Math.abs(body.vy) * 0.75; body.vAngle *= -0.5; }
                 if (body.y > maxY) { body.y = maxY; body.vy = -Math.abs(body.vy) * 0.75; body.vAngle *= -0.5; }
 
                 for (let j = i + 1; j < bodies.length; j++) {

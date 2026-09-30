@@ -1,6 +1,6 @@
 import './App.css';
 import './styles/cta.css';
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext, useRef } from 'react';
 import { Link as ScrollLink } from 'react-scroll'; // For smooth scrolling
 import { Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing';
@@ -21,8 +21,8 @@ import AllProjectsPage from './components/AllProjectsPage';
 import { ColorContext } from './context/ContextShare';
 
 // Import images for preloading
-import landingImage from './assets/landingImage.png.png';
-import aboutImage from './assets/jithin.jpeg';
+// import landingImage from './assets/landingImage.png.png';
+// import aboutImage from './assets/jithin.jpeg';
 
 
 const GREETINGS = [
@@ -61,10 +61,35 @@ const GREETINGS = [
 
 function App() {
   const { color } = useContext(ColorContext);
-
+  const footerRef = useRef(null);
+  const [footerHeight, setFooterHeight] = useState(0);
 
   const [showSidebar, setShowSidebar] = useState(false);
   const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    if (!footerRef.current) return;
+
+    const updateHeight = () => {
+      if (footerRef.current) {
+        setFooterHeight(footerRef.current.getBoundingClientRect().height);
+      }
+    };
+
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(footerRef.current);
+
+    // Fallback polling for the first 3 seconds to catch delayed image loads
+    const interval = setInterval(updateHeight, 500);
+    setTimeout(() => clearInterval(interval), 3000);
+
+    updateHeight();
+
+    return () => {
+      observer.disconnect();
+      clearInterval(interval);
+    };
+  }, [showSplash]);
   const [greetingIdx, setGreetingIdx] = useState(0);
   const [theme, setTheme] = useState(() => {
     // Retrieve the theme from localStorage or default to true (light mode)
@@ -82,7 +107,7 @@ function App() {
 
   // preload images to hide splash screen dynamically, with a minimum 5.0s wait
   useEffect(() => {
-    const imagesToLoad = [landingImage, aboutImage];
+    const imagesToLoad = []; // Removed missing images
 
     // Guarantee the splash screen displays for at least 5.0 seconds to cycle greetings
     const minWaitPromise = new Promise((resolve) => setTimeout(resolve, 5000));
@@ -165,103 +190,168 @@ function App() {
 
             ) : (
               <div>
-                {/* Header Section */}
-                <div className={`header ${showSidebar ? 'sidebar-active' : ''}`}>
-                  <div className="header-text">
-                    <h4 style={{ "--brand-hover-color": color }}>
-                      jithin<span>:)</span>
-                    </h4>
-                  </div>
-                  <div className="toggle-logo">
-                    {showSidebar ? (
-                      <i className="fa-solid fa-xmark fa-xl mb-3" onClick={toggleSidebar}></i>
-                    ) : (
-                      <TbMenuDeep size={25} className="mb-3" onClick={toggleSidebar} style={{ cursor: 'pointer' }} />
-                    )}
-                  </div>
-                  {/* Backdrop */}
-                  {showSidebar && (
-                    <div className="backdrop" onClick={toggleSidebar}></div>
-                  )}
-                  <div className={`header-links ${showSidebar ? 'visible' : 'hidden'}`}>
-                    <div className="mobile-menu-header">
-                      <div className="header-text">
-                        <h4>
-                          jithin<span>:)</span>
-                        </h4>
-                      </div>
-                      <i className="fa-solid fa-xmark fa-xl" onClick={toggleSidebar}></i>
+                {/* Main Content Wrapper for Shutter Effect */}
+                <div style={{ position: 'relative', zIndex: 10, backgroundColor: theme ? 'white' : 'black', marginBottom: `${footerHeight}px` }}>
+                  {/* Header Section */}
+                  <div className={`header ${showSidebar ? 'sidebar-active' : ''}`}>
+                    <div className="header-text">
+                      <h4 style={{ "--brand-hover-color": color }}>
+                        jithin<span>:)</span>
+                      </h4>
                     </div>
-
-                    <ScrollLink onClick={() => setShowSidebar(false)} to="landing" smooth={true} duration={500}>
-                      <h6 className="nav-link-text">HOME</h6>
-                    </ScrollLink>
-                    <ScrollLink onClick={() => setShowSidebar(false)} to="about" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -80 : -60}>
-                      <h6 className="nav-link-text">ABOUT</h6>
-                    </ScrollLink>
-                    <ScrollLink onClick={() => setShowSidebar(false)} to="services" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -30 : -50}>
-                      <h6 className="nav-link-text">SERVICES</h6>
-                    </ScrollLink>
-                    <ScrollLink onClick={() => setShowSidebar(false)} to="projects" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -20 : -30}>
-                      <h6 className="nav-link-text">WORKS</h6>
-                    </ScrollLink>
-                    <ScrollLink onClick={() => setShowSidebar(false)} to="contact" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -40 : -10}>
-                      <h6 className="nav-link-text">CONTACT</h6>
-                    </ScrollLink>
-
-                    <div className="mobile-menu-footer">
-                      <hr className="menu-divider" />
-                      <p className="follow-me-label">FOLLOW ME</p>
-                      <div className="mobile-social-links">
-                        <a href="https://www.instagram.com/jithin.pm_/?next=%2F" target="_blank" rel="noopener noreferrer">INSTAGRAM &rarr;</a>
-                        <a href="https://www.linkedin.com/in/jithin-pm-403241285/" target="_blank" rel="noopener noreferrer">LINKEDIN &rarr;</a>
-                      </div>
-                    </div>
-
-                    <div className="theme-switcher">
-                      {theme ? (
-                        <i className="fa-solid fa-moon fa-lg" onClick={handleToggle}></i>
+                    <div className="toggle-logo">
+                      {showSidebar ? (
+                        <i className="fa-solid fa-xmark fa-xl mb-3" onClick={toggleSidebar}></i>
                       ) : (
-                        <i className="fa-solid fa-cloud-sun fa-lg" onClick={handleToggle}></i>
+                        <TbMenuDeep size={25} className="mb-3" onClick={toggleSidebar} style={{ cursor: 'pointer' }} />
                       )}
                     </div>
+                    {/* Backdrop */}
+                    {showSidebar && (
+                      <div className="backdrop" onClick={toggleSidebar}></div>
+                    )}
+                    <div className={`header-links ${showSidebar ? 'visible' : 'hidden'}`}>
+                      <div className="mobile-menu-header">
+                        <div className="header-text">
+                          <h4>
+                            jithin<span>:)</span>
+                          </h4>
+                        </div>
+                        <i className="fa-solid fa-xmark fa-xl" onClick={toggleSidebar}></i>
+                      </div>
+
+                      <ScrollLink onClick={() => setShowSidebar(false)} to="landing" smooth={true} duration={500}>
+                        <h6 className="nav-link-text">HOME</h6>
+                      </ScrollLink>
+                      <ScrollLink onClick={() => setShowSidebar(false)} to="about" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -80 : -60}>
+                        <h6 className="nav-link-text">ABOUT</h6>
+                      </ScrollLink>
+                      <ScrollLink onClick={() => setShowSidebar(false)} to="services" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -30 : -50}>
+                        <h6 className="nav-link-text">SERVICES</h6>
+                      </ScrollLink>
+                      <ScrollLink onClick={() => setShowSidebar(false)} to="projects" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -20 : -30}>
+                        <h6 className="nav-link-text">WORKS</h6>
+                      </ScrollLink>
+                      <ScrollLink onClick={() => setShowSidebar(false)} to="contact" smooth={true} duration={500} offset={window.innerWidth <= 768 ? -40 : -10}>
+                        <h6 className="nav-link-text">CONTACT</h6>
+                      </ScrollLink>
+
+                      <div className="mobile-menu-footer">
+                        <hr className="menu-divider" />
+                        <p className="follow-me-label">FOLLOW ME</p>
+                        <div className="mobile-social-links">
+                          <a href="https://www.instagram.com/jithin.pm_/?next=%2F" target="_blank" rel="noopener noreferrer">INSTAGRAM &rarr;</a>
+                          <a href="https://www.linkedin.com/in/jithin-pm-403241285/" target="_blank" rel="noopener noreferrer">LINKEDIN &rarr;</a>
+                        </div>
+                      </div>
+
+                      <div className="theme-switcher">
+                        {theme ? (
+                          <i className="fa-solid fa-moon fa-lg" onClick={handleToggle}></i>
+                        ) : (
+                          <i className="fa-solid fa-cloud-sun fa-lg" onClick={handleToggle}></i>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                </div>
 
 
-                <div id="landing">
-                  <Landing />
-                </div>
+                  <div id="landing">
+                    <Landing />
+                  </div>
 
-                <ColorSwitcher />
-                <div id="about">
-                  <About />
-                </div>
-                
-                <Vision />
-                <div id="experience">
-                  <Experience />
-                </div>
+                  <ColorSwitcher />
+                  <div id="about">
+                    <About />
+                  </div>
 
-                <div id="services">
-                  <Services />
-                </div>
-                <ToolsMarquee />
-                <div id="projects">
-                  <Projects />
-                </div>
+                  <Vision />
+                  <div id="experience">
+                    <Experience />
+                  </div>
 
-                {/* CTA Section */}
-                <div className="cta-section" data-aos="fade-up" data-aos-duration="1400">
-                  <h2 className="cta-heading">INTERESTED IN<br />WORKING TOGETHER..?</h2>
-                  <p className="cta-contact-label">Contact me:</p>
-                  <a href="mailto:jithinpm.official@gmail.com" className="cta-email" style={{ '--cta-hover-color': color }}>
-                    jithinpm.official@gmail.com
-                  </a>
-                </div>
+                  <div id="services">
+                    <Services />
+                  </div>
+                  <ToolsMarquee />
+                  <div id="projects">
+                    <Projects />
+                  </div>
 
-                <div id='contact' >
-                  <Contact />
+                  {/* CTA Section */}
+                  <div className="cta-section" data-aos="fade-up" data-aos-duration="1400" style={{ position: 'relative', overflow: 'hidden' }}>
+
+                    {/* Bottom Right Sunburst */}
+                    <svg className="cta-sunburst" width="160" height="160" viewBox="0 0 100 100" style={{ position: 'absolute', bottom: '-70px', right: '-70px', zIndex: 0, color: color }}>
+                      <g transform="translate(50, 50)">
+                        <circle cx="0" cy="0" r="28" fill="currentColor" />
+                        <rect x="-6" y="-46" width="12" height="92" fill="currentColor" rx="1" />
+                        <rect x="-6" y="-46" width="12" height="92" fill="currentColor" rx="1" transform="rotate(22.5)" />
+                        <rect x="-6" y="-46" width="12" height="92" fill="currentColor" rx="1" transform="rotate(45)" />
+                        <rect x="-6" y="-46" width="12" height="92" fill="currentColor" rx="1" transform="rotate(67.5)" />
+                        <rect x="-6" y="-46" width="12" height="92" fill="currentColor" rx="1" transform="rotate(90)" />
+                        <rect x="-6" y="-46" width="12" height="92" fill="currentColor" rx="1" transform="rotate(112.5)" />
+                        <rect x="-6" y="-46" width="12" height="92" fill="currentColor" rx="1" transform="rotate(135)" />
+                        <rect x="-6" y="-46" width="12" height="92" fill="currentColor" rx="1" transform="rotate(157.5)" />
+                      </g>
+                    </svg>
+
+                    {/* Aesthetic Wavy Background (Exact Match to Reference) */}
+                    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 0, opacity: 0.12, pointerEvents: 'none' }}>
+
+                      {/* Top Left Swirl/Loop */}
+                      <path d="M 350,-50 C 350,150 150,250 150,150 C 150,50 300,50 300,150 C 300,300 100,400 -50,300" fill="none" stroke={color} strokeWidth="25" strokeLinecap="round" strokeLinejoin="round" />
+
+
+                    </svg>
+
+                    <div className="cta-container" style={{ position: 'relative', zIndex: 1 }}>
+                      <div className="cta-left">
+                        <p className="cta-subheading">Let's Work Together</p>
+                        <h2 className="cta-heading">
+                          Have an <span style={{ color }}>Idea?</span><br />
+                          Let's Turn It<br />
+                          Into Something<br />
+                          <span style={{ color }}>Remarkable.</span>
+                        </h2>
+                        <p className="cta-availability">Available for freelance, contract, and<br />collaboration opportunities.</p>
+                      </div>
+                      <div className="cta-right">
+                        <p className="cta-description">
+                          Whether you need a new website, a fresh digital experience,
+                          or a complete redesign, I can help turn your vision into a
+                          digital solution that looks great, works smoothly, and delivers
+                          real value and meaningful results that elevate your brand.
+                        </p>
+                        <div className="cta-button-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', marginTop: '20px' }}>
+                          <svg className="cta-arrow" width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: '87px', marginBottom: '13px', transform: 'scaleX(-1) rotate(70deg)', overflow: 'visible' }}>
+                            <path d="M 20,10 C 15,60 25,80 50,80 C 75,80 75,40 50,40 C 25,40 25,80 80,107" stroke={theme ? '#111' : '#fff'} strokeWidth="1.5" strokeDasharray="6 6" fill="none" strokeLinecap="round" />
+                            <path d="M 87,109 L 67,95 L 74,108 L 64,121 Z" fill={theme ? '#111' : '#fff'} transform="rotate(20 80 107)" />
+                          </svg>
+                          <ScrollLink to="contact" smooth={true} duration={500} offset={-30} className="view-all-btn" style={{ '--btn-color': color, borderColor: color, textDecoration: 'none', marginTop: '0' }}>
+                            <span className="vab-text" style={{ color: color }}>Contact Me</span>
+                            <span className="vab-arrow" style={{ color: color }}>
+                              <svg width="24" height="24" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.0879 12.4941L3.92134 12.4941" stroke="currentColor" strokeWidth="2" strokeLinecap="square"></path>
+                                <path d="M13.4863 20.0911C13.4863 16.1888 16.9231 12.5002 21.0772 12.5002" stroke="currentColor" strokeWidth="2" strokeLinecap="square"></path>
+                                <path d="M13.4932 4.90935C13.4932 8.81171 16.9299 12.5002 21.0841 12.5002" stroke="currentColor" strokeWidth="2" strokeLinecap="square"></path>
+                              </svg>
+                            </span>
+                          </ScrollLink>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Dummy div to allow react-scroll navigation to reach the bottom of the main content */}
+                  <div id='contact' style={{ position: 'absolute', bottom: 0 }}></div>
+                </div> {/* End Main Content Wrapper */}
+
+                {/* Shutter Footer Wrapper */}
+                <div className="shutter-wrapper" ref={footerRef} style={{ position: 'fixed', bottom: 0, left: 0, width: '100%', zIndex: 0, backgroundColor: theme ? 'white' : 'black' }}>
+                  <div>
+                    <Contact />
+                  </div>
                 </div>
 
                 <ToastContainer

@@ -9,6 +9,7 @@ function Contact() {
     const { color } = useContext(ColorContext);
     const form = useRef();
     const [errors, setErrors] = useState({});
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
 
     const validateField = (name, value) => {
         let error = "";
@@ -72,6 +73,7 @@ function Contact() {
                     console.log("SUCCESS!", result.text);
                     setErrors({});
                     e.target.reset();
+                    setShowSuccessModal(true);
                 },
                 (error) => {
                     console.error("FAILED...", error);
@@ -94,7 +96,7 @@ function Contact() {
             <div style={{ position: 'relative', zIndex: 1, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
             <div className="contacts-heading" data-aos="fade-up" data-aos-duration="1400">
-                <h2 style={{ fontFamily: '"Unbounded", sans-serif', fontOpticalSizing: 'auto', fontWeight: 500, fontStyle: 'normal', fontSize: 'clamp(2.3rem, 6vw, 3.5rem)', lineHeight: 0.97 }}>Get in Touch</h2>
+                <h2 style={{ fontFamily: '"Unbounded", sans-serif', fontOpticalSizing: 'auto', fontWeight: 500, fontStyle: 'normal', fontSize: 'clamp(1.4rem, 3vw, 2.2rem)', lineHeight: 0.97 }}>Get in Touch</h2>
             </div>
             <div className="contacts-section">
                 <div className="input-section" data-aos="fade-right" data-aos-duration="1400">
@@ -223,6 +225,122 @@ function Contact() {
                     </div>
                 </div>
             </div>
+            {showSuccessModal && (
+                <div className="success-modal-overlay" onClick={() => setShowSuccessModal(false)}>
+                    <div className="success-modal-content" onClick={(e) => e.stopPropagation()}>
+                        <div className="success-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 className="success-modal-title">Message Sent</h3>
+                        <p className="success-modal-desc">
+                            Thank you for reaching out. I will get back to you shortly.
+                        </p>
+                        <button 
+                            className="view-all-btn" 
+                            style={{ '--accent-color': color, alignSelf: 'center' }}
+                            onClick={() => setShowSuccessModal(false)}
+                        >
+                            <span className="vab-text">Close</span>
+                            <span className="vab-arrow">
+                                <svg width="24" height="24" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.5 12.5L4 4M12.5 12.5L21 4M12.5 12.5L4 21M12.5 12.5L21 21" stroke="currentColor" strokeWidth="2" strokeLinecap="square"></path>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            <style>{`
+                .success-modal-overlay {
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  width: 100vw;
+                  height: 100vh;
+                  background: rgba(0, 0, 0, 0.3);
+                  backdrop-filter: blur(4px);
+                  z-index: 10000;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  opacity: 0;
+                  animation: modalFadeIn 0.3s ease forwards;
+                }
+                
+                @keyframes modalFadeIn {
+                  to { opacity: 1; }
+                }
+                
+                .success-modal-content {
+                  background: #ffffff;
+                  padding: 40px 30px;
+                  border-radius: 0;
+                  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+                  text-align: center;
+                  max-width: 400px;
+                  width: 90%;
+                  transform: translateY(15px);
+                  animation: modalPopUp 0.4s ease forwards;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                }
+                
+                .darkmode .success-modal-content {
+                  background: #000000;
+                  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+                }
+                
+                @keyframes modalPopUp {
+                  to { transform: translateY(0); }
+                }
+                
+                .success-icon-wrapper {
+                  margin-bottom: 25px;
+                  color: #111;
+                  width: 70px;
+                  height: 70px;
+                  border-radius: 50%;
+                  border: 1.5px solid rgba(0, 0, 0, 0.15);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+                
+                .darkmode .success-icon-wrapper {
+                  color: #fff;
+                  border-color: rgba(255, 255, 255, 0.2);
+                }
+                
+                .success-icon-wrapper svg {
+                  width: 32px;
+                  height: 32px;
+                }
+                
+                .success-modal-title {
+                  font-family: "Geologica", sans-serif;
+                  font-size: 22px;
+                  font-weight: 500;
+                  margin-bottom: 12px;
+                  color: #111;
+                }
+                
+                .darkmode .success-modal-title {
+                  color: #fff;
+                }
+                
+                .success-modal-desc {
+                  font-family: "Geologica", sans-serif;
+                  font-size: 14px;
+                  color: rgb(140, 140, 140);
+                  line-height: 1.6;
+                  margin-bottom: 30px;
+                  font-weight: 300;
+                }
+            `}</style>
             </div>
         </div>
     );

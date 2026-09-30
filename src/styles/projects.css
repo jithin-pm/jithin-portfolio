@@ -9,32 +9,58 @@
 
 /* heading section */
 .projects-heading {
+    width: 80%; /* Match grid width */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 10px;
 }
 
-.projects-heading p {
-    color: rgb(162, 162, 162);
-    font-size: 16px;
-    letter-spacing: 1px;
+.projects-subtitle {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    color: var(--text-color); /* You can rely on the default color or adjust if needed */
 }
 
-.projects-heading h2 {
-    margin-top: -17px;
+.projects-heading-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.projects-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
     font-weight: 600;
-    font-family: "Geologica", "sans-serif";
-    font-size: 38px;
+    line-height: 1.1;
+    margin: 0;
+    max-width: 65%;
+    letter-spacing: -1px;
+}
+
+@media (max-width: 900px) {
+    .projects-heading-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .projects-title {
+        max-width: 100%;
+    }
+    .projects-description {
+        text-align: left;
+    }
 }
 
 .projects-block-main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-top: 50px;
-    margin-top: 50px;
+    margin-top: 20px;
     width: 80%;
     justify-items: center;
 }
