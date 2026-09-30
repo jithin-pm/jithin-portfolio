@@ -286,6 +286,7 @@
     position: relative;
     transition: all 0.35s ease;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 /* Dark Mode Default */
