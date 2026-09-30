@@ -124,6 +124,9 @@
 }
 
 @media (max-width: 768px) {
+  .vision-section {
+    min-height: 70svh;
+  }
   .vision-text {
     font-size: 6vw;
     letter-spacing: -1px;

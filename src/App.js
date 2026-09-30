@@ -21,6 +21,7 @@ import AllProjectsPage from './components/AllProjectsPage';
 import { ColorContext } from './context/ContextShare';
 
 // Import images for preloading
+import jithinImg from './assets/jithin.jpg';
 // import landingImage from './assets/landingImage.png.png';
 // import aboutImage from './assets/jithin.jpeg';
 
@@ -175,6 +176,9 @@ function App() {
 
   return (
     <div className={theme ? 'lightmode' : 'darkmode'}>
+      {/* Hidden image for early preloading during splash screen */}
+      <img src={jithinImg} style={{ display: 'none' }} alt="" />
+      
       <Routes>
         <Route path="/projects" element={
           <AllProjectsPage theme={theme} handleToggle={handleToggle} />
