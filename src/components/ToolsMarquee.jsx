@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import '../styles/toolsmarquee.css';
-import { ColorContext } from '../context/ContextShare';
 import { FaReact, FaAngular, FaAws } from 'react-icons/fa';
 import { 
   SiNextdotjs, 

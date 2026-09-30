@@ -3,7 +3,7 @@ import "../styles/contact.css";
 import { ColorContext } from "../context/ContextShare";
 import { toast } from "react-toastify";
 import emailjs from "@emailjs/browser";
-import contactBg from "../assets/contact-bg.jpg";
+
 
 function Contact() {
     const { color } = useContext(ColorContext);
