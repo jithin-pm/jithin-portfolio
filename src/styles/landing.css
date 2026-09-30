@@ -3,8 +3,8 @@
 .new-landing {
     position: relative;
     width: 100vw;
-    height: 100dvh;
-    min-height: 100dvh;
+    height: 100svh;
+    min-height: 100svh;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
