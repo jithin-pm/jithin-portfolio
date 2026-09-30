@@ -23,7 +23,16 @@
     align-items: center;
     justify-content: center;
     transform-origin: bottom right;
-    animation: expandOpen 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .palette-inner {
@@ -36,7 +45,8 @@
 
 .palette-base-icon {
     font-size: 150px;
-    color: #e5e7eb; /* Light Grey (Tailwind gray-200 equivalent) */
+    color: #e5e7eb;
+    /* Light Grey (Tailwind gray-200 equivalent) */
     filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.12));
     transition: color 0.3s ease;
     display: block;
@@ -64,16 +74,36 @@
     filter: brightness(1.1);
 }
 
-.palette-color-hole.ash { top: 53%; left: 25%; background-color: rgb(128 128 128); }
-.palette-color-hole.blue { top: 35%; left: 23%; background-color: #6a27df; }
-.palette-color-hole.green { top: 22%; left: 37%; background-color: #08a096; }
-.palette-color-hole.yellow { top: 24%; left: 56%; background-color: #ff4d6d; }
-.palette-color-hole.red { 
-    top: 59%; 
-    left: 48%; 
-    background-color: #c50900; 
-    width: 30px; 
-    height: 30px; 
+.palette-color-hole.ash {
+    top: 53%;
+    left: 25%;
+    background-color: rgb(128 128 128);
+}
+
+.palette-color-hole.blue {
+    top: 35%;
+    left: 23%;
+    background-color: #7358ff;
+}
+
+.palette-color-hole.green {
+    top: 22%;
+    left: 37%;
+    background-color: #08a096;
+}
+
+.palette-color-hole.yellow {
+    top: 24%;
+    left: 56%;
+    background-color: #ff4d6d;
+}
+
+.palette-color-hole.red {
+    top: 59%;
+    left: 48%;
+    background-color: #FD4539;
+    width: 30px;
+    height: 30px;
 }
 
 

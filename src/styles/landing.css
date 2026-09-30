@@ -26,14 +26,14 @@
     transform: translate(-50%, -50%);
     font-size: 35vw;
     font-weight: 800;
-    color: rgba(0, 0, 0, 0.03);
+    color: rgba(0, 0, 0, 0.05);
     z-index: 0;
     pointer-events: none;
     letter-spacing: -0.05em;
 }
 
 .darkmode .bg-watermark {
-    color: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.05);
 }
 
 /* Corners */

@@ -16,7 +16,7 @@ import ToolsMarquee from './components/ToolsMarquee';
 import Contact from './components/Contact';
 import { ToastContainer, Zoom } from 'react-toastify';
 import ColorSwitcher from './components/ColorSwitcher';
-import { TbMenuDeep } from 'react-icons/tb';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import AllProjectsPage from './components/AllProjectsPage';
 import { ColorContext } from './context/ContextShare';
 
@@ -200,10 +200,13 @@ function App() {
                       </h4>
                     </div>
                     <div className="toggle-logo">
+                      <ScrollLink to="contact" smooth={true} duration={500} style={{ textDecoration: 'none' }}>
+                         <span style={{ color: color, fontWeight: 600, cursor: 'pointer', fontFamily: '"Geologica", sans-serif', fontSize: '12px', letterSpacing: '0.5px' }}>Let's Talk</span>
+                      </ScrollLink>
                       {showSidebar ? (
-                        <i className="fa-solid fa-xmark fa-xl mb-3" onClick={toggleSidebar}></i>
+                        <i className="fa-solid fa-xmark fa-xl" onClick={toggleSidebar}></i>
                       ) : (
-                        <TbMenuDeep size={25} className="mb-3" onClick={toggleSidebar} style={{ cursor: 'pointer' }} />
+                        <GiHamburgerMenu size={25} onClick={toggleSidebar} style={{ cursor: 'pointer' }} />
                       )}
                     </div>
                     {/* Backdrop */}

@@ -298,6 +298,7 @@
 
   .header {
     padding: 0px 25px;
+    height: 60px;
   }
 
   /* Disable blur when sidebar is active to avoid visual clash */
@@ -317,7 +318,9 @@
   }
 
   .toggle-logo {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
 
   .header-text h4 {
@@ -400,7 +403,7 @@
     }
 
     .splash-screen h1 {
-      margin-bottom: 100px;
+      margin-bottom: 0px;
     }
   }
 

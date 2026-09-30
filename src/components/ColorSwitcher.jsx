@@ -20,6 +20,23 @@ function ColorSwitcher() {
         setShow(!show);
     };
 
+    // Close the color picker on scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            if (show) {
+                setShow(false);
+            }
+        };
+
+        if (show) {
+            window.addEventListener('scroll', handleScroll, { passive: true });
+        }
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [show]);
+
     // Function to handle color changes and save them to localStorage
     const handleColorChange = (newColor) => {
         setColor(newColor); // Update global color
@@ -32,11 +49,11 @@ function ColorSwitcher() {
                 <div className='color-palette-ui'>
                     <div className="palette-inner">
                         <IoIosColorPalette className="palette-base-icon" />
-                        
+
                         {/* Interactive Color Circles positioned over the icon's holes */}
-                        <div className="palette-color-hole red" onClick={() => handleColorChange('#c50900')}></div>
-                        <div className="palette-color-hole blue" onClick={() => handleColorChange('#6a27df')}></div>
-                        <div className="palette-color-hole green" onClick={() => handleColorChange('#08a096')}></div>
+                        <div className="palette-color-hole red" onClick={() => handleColorChange('#FD4539')}></div>
+                        < div className="palette-color-hole blue" onClick={() => handleColorChange('#7358ff')}></div>
+                        < div className="palette-color-hole green" onClick={() => handleColorChange('#08a096')}></div>
                         <div className="palette-color-hole yellow" onClick={() => handleColorChange('#ff4d6d')}></div>
                         <div className="palette-color-hole ash" onClick={() => handleColorChange('rgb(128 128 128)')}></div>
                     </div>
@@ -51,7 +68,7 @@ function ColorSwitcher() {
                 }
 
             </div>
-        </div>
+        </div >
     );
 }
 

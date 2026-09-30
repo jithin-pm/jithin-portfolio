@@ -7,7 +7,7 @@ function Landing() {
   const { color } = useContext(ColorContext);
   return (
     <div className="new-landing">
-       <div className="bg-watermark">dev</div>
+       <div className="bg-watermark">dev.</div>
 
        {/* Bottom Corners */}
        <div className="corner bl-corner" style={{ alignItems: 'center' }}>
