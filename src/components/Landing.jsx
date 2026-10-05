@@ -38,7 +38,7 @@ function Landing() {
           <div className="typo-layer behind">
              <div className="t-line t1">Crafting</div>
              <div className="t-line t2">innovative</div>
-             <div className="t-line t3">websites</div>
+             <div className="t-line t3">platforms</div>
              <div className="t-line t4">that</div>
              <div className="t-line t5">captivate</div>
              <div className="t-line t6">your</div>
@@ -78,7 +78,7 @@ function Landing() {
           <div className="typo-layer front">
              <div className="t-line t1">Crafting</div>
              <div className="t-line t2">innovative</div>
-             <div className="t-line t3">websites</div>
+             <div className="t-line t3">platforms</div>
              <div className="t-line t4">that</div>
              <div className="t-line t5">captivate</div>
              <div className="t-line t6">your</div>

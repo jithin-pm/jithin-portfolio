@@ -4,20 +4,20 @@ import '../styles/vision.css';
 const Vision = () => {
   return (
     <div className="vision-section">
-      <svg style={{ position: 'absolute', width: 0, height: 0 }}>
-        <filter id="wavy" colorInterpolationFilters="sRGB">
-          <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" xChannelSelector="R" yChannelSelector="G" />
+      <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }} aria-hidden="true">
+        <filter id="wavy" colorInterpolationFilters="sRGB" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="25" xChannelSelector="R" yChannelSelector="G" />
         </filter>
       </svg>
-      <div className="wavy-wrapper" style={{ filter: 'url(#wavy)' }}>
-        {[...Array(30)].map((_, i) => (
+      <div className="wavy-wrapper">
+        {[...Array(18)].map((_, i) => (
           <div 
             className="ring" 
             key={i} 
             style={{ 
-              width: `${(i + 1) * 60}px`, 
-              height: `${(i + 1) * 60}px`,
+              width: `${(i + 1) * 55}px`, 
+              height: `${(i + 1) * 55}px`,
               animationDelay: `${i * 0.12}s` 
             }}
           ></div>
